@@ -149,7 +149,7 @@ The student-course pair identifies the relationship, while `enrolled_at` and `gr
 
 These patterns can overlap. Choose constraints and table boundaries based on identity, cardinality, lifecycle, and integrity requirements rather than treating the labels as mutually exclusive SQL categories.
 
-Related database concepts are covered in [Foreign Keys and Indexes](foreign-keys-and-indexes-explainer.md).
+Related database concepts are covered in [Foreign Keys and Indexes](foreign-keys-and-indexes.md).
 
 ## References
 
