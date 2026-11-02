@@ -23,7 +23,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 - [Constructor Injection](spring-boot/constructor-injection.md): Constructor injection compared with field and setter injection.
 - [Project Dependency Breakdown](spring-boot/project-dependency-breakdown.md): A project-specific walkthrough of dependencies, build settings, and version considerations.
-- [Database Connection Exhaustion in Tests](spring-boot/testing/database-connection-exhaustion.md): Why test suites create too many database connections and how to diagnose the cause.
+- [Database Connection Exhaustion in Tests](spring-boot/testing/database-connection-exhaustion.md): How contexts and connection pools affect database limits, with diagnosis steps and a worked PostgreSQL example.
 - [Shared PostgreSQL Testcontainers](spring-boot/testing/shared-postgres-testcontainers.md): Container lifecycles, reusable declarations, and sharing PostgreSQL across tests.
 
 ### Build Tools
