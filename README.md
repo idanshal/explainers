@@ -16,12 +16,15 @@ Practical explanations of software concepts, tools, and common problems, organiz
 ### Java
 
 - [Annotations](java/annotations.md): Annotation declarations, practical uses, and meta-annotations.
+- [Java Streams](java/streams.md): Why to use streams, chained filters, flatMap, collectors, ordering, and common pitfalls.
+- [Super Type Tokens](java/super-type-tokens.md): Capturing generic type metadata, type erasure, Spring and Jackson usage, and unresolved type-variable pitfalls.
 - [Jackson 3 Mr Bean](java/jackson/jackson-3-mrbean.md): What the module does, how to configure it, and its limitations.
 - [JPA ID Generation and Hibernate Schema Management](java/persistence/jpa-id-generation-and-hibernate-schema-management.md): ID generation, schema settings, and Spring Boot defaults.
 
 ### Spring Boot
 
 - [Constructor Injection](spring-boot/constructor-injection.md): Constructor injection compared with field and setter injection.
+- [Managing Multiple Data Sources](spring-boot/multiple-data-sources.md): What a datasource is, current JDBC and JPA configuration patterns, transactions, migrations, and operational checks.
 - [Project Dependency Breakdown](spring-boot/project-dependency-breakdown.md): A project-specific walkthrough of dependencies, build settings, and version considerations.
 - [Database Connection Exhaustion in Tests](spring-boot/testing/database-connection-exhaustion.md): How contexts and connection pools affect database limits, with diagnosis steps and a worked PostgreSQL example.
 - [Shared PostgreSQL Testcontainers](spring-boot/testing/shared-postgres-testcontainers.md): Container lifecycles, reusable declarations, and sharing PostgreSQL across tests.
@@ -29,6 +32,12 @@ Practical explanations of software concepts, tools, and common problems, organiz
 ### Build Tools
 
 - [Maven Plugins](build-tools/maven-plugins.md): Common build plugins and the role each plays.
+
+### Docker
+
+- [Dockerfiles, Permissions, and Multi-Stage Builds](docker/dockerfiles-and-multi-stage-builds.md): Core instructions, build contexts, non-root users, secrets, and a Spring Boot build/runtime example.
+- [Building, Tagging, and Running Images](docker/build-tag-and-run.md): Build and runtime flags, image tags and digests, publishing, networking, storage, and container lifecycle.
+- [Mounts and Copying Files](docker/mounts-and-copying-files.md): Use host files through bind mounts, persist data with volumes, and copy files or directories into and out of containers.
 
 ### Networking
 
