@@ -53,7 +53,9 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### Security
 
+- [OAuth 2.0: Delegated API Authorization](security/oauth2.md): Start here for the industry standard, delegation model, authorization code flow, PKCE, and the distinction from OpenID Connect.
 - [OAuth 2.0 Flow with Azure (Microsoft Entra ID)](security/oauth2-with-azure.md): Authorization code flow with PKCE, sign-in versus authorization, token roles, and a Microsoft Graph example.
+- [OAuth 2.0 Flow with Google](security/oauth2-with-google.md): OIDC sign-in, Calendar API access, PKCE, consent, refresh tokens, and differences from Microsoft Entra ID.
 
 ### Workflows
 
