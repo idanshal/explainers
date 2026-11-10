@@ -6,7 +6,10 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### AI
 
-- [Concepts, Agents, Skills, and MCP](ai/concepts-agents-skills-and-mcp.md): Core AI terminology, coding agents, context tools, and MCP integrations.
+- [AI Concepts](ai/concepts.md): Start here for models, prompts, context, agents, tools, skills, memory, and RAG.
+- [Coding Agents](ai/coding-agents.md): Copilot CLI, Claude Code, Codex, execution environments, permissions, and specialized skills.
+- [Context Optimization](ai/context-optimization.md): Input filtering, output concision, and the tradeoffs of Caveman and RTK.
+- [Model Context Protocol (MCP)](ai/mcp.md): Hosts, clients, servers, exposed capabilities, and documentation integrations.
 
 ### Databases
 
@@ -34,6 +37,10 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 - [Maven Plugins](build-tools/maven-plugins.md): Common build plugins and the role each plays.
 
+### Deployment
+
+- [Cloudflare Pages](deployment/cloudflare-pages.md): Deployment workflows, runtime boundaries, and when to consider Pages versus Workers.
+
 ### Docker
 
 - [Dockerfiles, Permissions, and Multi-Stage Builds](docker/dockerfiles-and-multi-stage-builds.md): Core instructions, build contexts, non-root users, secrets, and a Spring Boot build/runtime example.
@@ -50,7 +57,12 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### Workflows
 
-- [Temporal Best Practices](workflows/temporal-best-practices.md): Activities, data, retries, timeouts, and schedules.
+- [Temporal Overview](workflows/temporal/README.md): Start here for orchestration, replay, Activity value boundaries, and a production checklist.
+- [Temporal Activities and Failures](workflows/temporal/activities-and-failures.md): Timeouts, retries, heartbeats, cancellation, failure conversion, and duplicate-safe effects.
+- [Temporal Data and History](workflows/temporal/data-and-history.md): Payload limits, event counts, Continue-As-New, external storage, and retention.
+- [Batch Processing with Temporal](workflows/temporal/batch-processing.md): Pagination, snapshots, bounded concurrency, durable batch tables, and recovery.
+- [Java Concurrency in Temporal](workflows/temporal/java-concurrency.md): Workflow concurrency, asynchronous Activity completion, and SDK virtual-thread configuration.
+- [Temporal Schedules](workflows/temporal/schedules.md): CLI commands, interval timing, overlap policies, updates, pause, and deletion.
 
 ## Organization Conventions
 
