@@ -217,7 +217,7 @@ docker run -d \
   --publish 127.0.0.1:8080:8080 \
   --user 10001:10001 \
   --read-only \
-  --tmpfs /tmp:rw,nosuid,nodev,size=128m,mode=1777 \
+  --tmpfs /tmp:rw,noexec,nosuid,nodev,size=128m,mode=1777 \
   --cap-drop ALL \
   --security-opt no-new-privileges=true \
   --memory 512m \
@@ -229,7 +229,7 @@ docker run -d \
 
 This is a **starting policy to test**, not a universal production sizing recommendation. It assumes the app only needs `/tmp` for writes, can run with no capabilities, and has adequate memory and task limits. Add explicit writable storage if needed, provision external services separately, and test startup, load, and graceful shutdown. JVM heap must leave room for non-heap memory; do not allocate the entire container limit to `-Xmx`.
 
-The temporary mount deliberately does not enforce `noexec`: some libraries extract native code or executables into temporary locations. If your application supports it, test adding `noexec` as an additional restriction.
+Docker adds `noexec` to tmpfs mounts by default; the command makes that restriction explicit. Some libraries extract native code or executables into temporary locations and may fail with this setting. If the application requires executable temporary files, replace `noexec` with `exec`, for example `--tmpfs /tmp:rw,exec,nosuid,nodev,size=128m,mode=1777`, and test the resulting policy. Merely omitting `noexec` does not enable execution.
 
 The image already sets the same non-root identity; the runtime flag makes that policy explicit. The command does not use `--rm` because it has a restart policy. For actual production systems, let your orchestrator or service manager own lifecycle, probes, rollout, and policy rather than treating one shell command as a deployment platform.
 

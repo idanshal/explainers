@@ -161,7 +161,9 @@ static void postgresProperties(DynamicPropertyRegistry registry) {
 
 `@DynamicPropertySource` is more explicit and works for settings that do not have a Boot service-connection factory. `@ServiceConnection` is less boilerplate for supported services. When both connection details and ordinary connection properties exist, Boot's service connection details take precedence for the auto-configuration that consumes them.
 
-For a Spring-managed typed `PostgreSQLContainer`, `@ServiceConnection` can be placed on the `@Bean` method. With an untyped `GenericContainer`, Boot cannot infer the service from the return type; use `@ServiceConnection(name = "postgres")` when a matching connection factory supports that image, or wire the properties explicitly.
+For a Spring-managed typed `PostgreSQLContainer`, `@ServiceConnection` can be placed on the `@Bean` method. Keep PostgreSQL examples typed: Boot's built-in JDBC connection factory requires a `JdbcDatabaseContainer`, such as `PostgreSQLContainer`. Adding `@ServiceConnection(name = "postgres")` to an ordinary `GenericContainer` does not satisfy that requirement; wire connection properties explicitly or supply a custom connection-details integration instead.
+
+Image-name hints work only with factories that support name-based matching. For example, a `GenericContainer` bean running Redis can use `@ServiceConnection(name = "redis")` with Boot's Redis connection factory. The hint is not a universal substitute for a typed container.
 
 ## `withReuse(true)` is different
 

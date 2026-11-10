@@ -12,6 +12,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 - [Relational Table Patterns](databases/relational-table-patterns.md): Common table roles and how they model relational data.
 - [Foreign Keys and Indexes](databases/foreign-keys-and-indexes.md): Relationships, integrity constraints, and indexing.
+- [Flyway: Database Migrations and SQL Script Tracking](databases/flyway.md): What Flyway does, how to run it, and how filenames, checksums, and database history control SQL migrations.
 
 ### Java
 
@@ -25,7 +26,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 - [Constructor Injection](spring-boot/constructor-injection.md): Constructor injection compared with field and setter injection.
 - [Managing Multiple Data Sources](spring-boot/multiple-data-sources.md): What a datasource is, current JDBC and JPA configuration patterns, transactions, migrations, and operational checks.
-- [Project Dependency Breakdown](spring-boot/project-dependency-breakdown.md): A project-specific walkthrough of dependencies, build settings, and version considerations.
+- [Spring Boot Dependency Breakdown](spring-boot/project-dependency-breakdown.md): A representative Maven application's dependencies, build settings, H2 console activation, and version considerations.
 - [Database Connection Exhaustion in Tests](spring-boot/testing/database-connection-exhaustion.md): How contexts and connection pools affect database limits, with diagnosis steps and a worked PostgreSQL example.
 - [Shared PostgreSQL Testcontainers](spring-boot/testing/shared-postgres-testcontainers.md): Container lifecycles, reusable declarations, and sharing PostgreSQL across tests.
 
@@ -42,6 +43,10 @@ Practical explanations of software concepts, tools, and common problems, organiz
 ### Networking
 
 - [SSH, Keys, and GitHub](networking/ssh-keys-and-github.md): Key pairs, SSH agents, host configuration, and GitHub authentication.
+
+### Security
+
+- [OAuth 2.0 Flow with Azure (Microsoft Entra ID)](security/oauth2-with-azure.md): Authorization code flow with PKCE, sign-in versus authorization, token roles, and a Microsoft Graph example.
 
 ### Workflows
 

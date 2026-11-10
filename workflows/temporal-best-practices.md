@@ -496,17 +496,19 @@ guide.
 
 ### Create a Schedule every 48 hours
 
-The original `172800s` interval is 48 hours. The current equivalent, with an
-explicit overlap policy, is:
+This example runs a registered `CustomerSyncWorkflow` on the `customer-sync-tasks`
+task queue every 48 hours (`172800` seconds), with an explicit overlap policy.
+The namespace, Workflow Type, and task queue are example values; substitute your
+own consistently:
 
 ```bash
 temporal schedule create \
-  --namespace temporal-test \
-  --schedule-id SyncActiveUsersWorkflow \
+  --namespace example-namespace \
+  --schedule-id customer-sync \
   --interval 48h \
-  --workflow-id SyncActiveUsersWorkflow \
-  --type SyncActiveUsersWorkflow \
-  --task-queue GHTaskQueue_1 \
+  --workflow-id customer-sync \
+  --type CustomerSyncWorkflow \
+  --task-queue customer-sync-tasks \
   --overlap-policy Skip
 ```
 
@@ -529,8 +531,8 @@ for outages and consider jitter for fleets of Schedules. [14][15]
 
 ```bash
 temporal schedule describe \
-  --namespace temporal-test \
-  --schedule-id SyncActiveUsersWorkflow
+  --namespace example-namespace \
+  --schedule-id customer-sync
 ```
 
 Inspect the next action times, Workflow Type, task queue, inputs, and policies.
@@ -540,12 +542,12 @@ reset to defaults, so do not treat it as a partial patch. [14]
 
 ### Delete a Schedule
 
-The current replacement for the legacy delete command is:
+To delete the same Schedule created above:
 
 ```bash
 temporal schedule delete \
-  --namespace temporal-test \
-  --schedule-id CaGrowthPlanTemplatesSyncWorkflow
+  --namespace example-namespace \
+  --schedule-id customer-sync
 ```
 
 **Deleting a Schedule does not cancel or terminate Workflow Executions it already
