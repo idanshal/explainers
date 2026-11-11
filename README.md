@@ -27,6 +27,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### Spring Boot
 
+- [AOP and Spring AOP](spring-boot/aop.md): Cross-cutting concerns, proxies, elapsed-time logging and retry annotations, advice ordering, and production pitfalls.
 - [Constructor Injection](spring-boot/constructor-injection.md): Constructor injection compared with field and setter injection.
 - [Managing Multiple Data Sources](spring-boot/multiple-data-sources.md): What a datasource is, current JDBC and JPA configuration patterns, transactions, migrations, and operational checks.
 - [Spring Boot Dependency Breakdown](spring-boot/project-dependency-breakdown.md): A representative Maven application's dependencies, build settings, H2 console activation, and version considerations.
@@ -39,7 +40,8 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### Deployment
 
-- [Cloudflare Pages](deployment/cloudflare-pages.md): Deployment workflows, runtime boundaries, and when to consider Pages versus Workers.
+- [LaunchDarkly](deployment/launchdarkly.md): Practical feature flags, Java/Spring integration, targeting, safe rollouts, testing, outage behavior, and flag lifecycle.
+- [Cloudflare Pages](deployment/cloudflare-pages.md): A practical site-and-API walkthrough, deployment workflows, configuration, routing, security, operations, and Pages versus Workers.
 
 ### Docker
 
@@ -59,6 +61,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### Workflows
 
+- [GitHub Actions](workflows/github-actions.md): Practical Maven CI, triggers, runners, outputs, artifacts, caching, security, deployments, and troubleshooting.
 - [Temporal Overview](workflows/temporal/README.md): Start here for orchestration, replay, Activity value boundaries, and a production checklist.
 - [Temporal Activities and Failures](workflows/temporal/activities-and-failures.md): Timeouts, retries, heartbeats, cancellation, failure conversion, and duplicate-safe effects.
 - [Temporal Data and History](workflows/temporal/data-and-history.md): Payload limits, event counts, Continue-As-New, external storage, and retention.
