@@ -61,7 +61,15 @@
 
 :root[data-theme='light'] {
 	--sl-color-white: #202821;
-	--sl-color-black: #f9faf7;
+	--sl-color-gray-1: #26312a;
+	--sl-color-gray-2: #3d4941;
+	--sl-color-gray-3: #56635b;
+	--sl-color-gray-4: #718078;
+	--sl-color-gray-5: #aeb9af;
+	--sl-color-gray-6: #e6ebe5;
+	--sl-color-gray-7: #f2f4ef;
+	--sl-color-black: #ffffff;
+	--sl-color-bg-inline-code: #e6ebe5;
 }
 
 html {
