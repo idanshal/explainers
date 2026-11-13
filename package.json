@@ -1,0 +1,25 @@
+{
+  "name": "explainers",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prepare:catalog": "node scripts/prepare-catalog.mjs",
+    "predev": "npm run prepare:catalog",
+    "prebuild": "npm run prepare:catalog",
+    "precheck:content": "npm run prepare:catalog",
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:content": "node scripts/check-content.mjs"
+  },
+  "dependencies": {
+    "@astrojs/markdown-remark": "^7.3.0",
+    "@astrojs/starlight": "^0.42.11",
+    "@fontsource-variable/ibm-plex-sans": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource-variable/newsreader": "^5.3.0",
+    "astro": "^7.4.11",
+    "astro-mermaid": "^2.2.0",
+    "mermaid": "^12.3.0"
+  }
+}

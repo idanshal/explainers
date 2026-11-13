@@ -2,7 +2,7 @@
 
 Research checked: 2026-10-25
 
-Activity reliability depends on timeouts, retries, heartbeats, cancellation, and duplicate-safe effects working together. For the execution model and serialized Activity boundaries, start with the [Temporal Overview](README.md).
+Activity reliability depends on timeouts, retries, heartbeats, cancellation, and duplicate-safe effects working together. For the execution model and serialized Activity boundaries, start with the [Temporal Overview](index.md).
 
 Examples use the Java SDK and ordinary remote Activities unless stated otherwise. Timeout values are illustrative and must fit the workload.
 

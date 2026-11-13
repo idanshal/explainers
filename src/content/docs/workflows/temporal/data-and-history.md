@@ -1,10 +1,14 @@
+---
+title: "Temporal Data and History"
+---
+
 # Temporal Data and History
 
 Research checked: 2026-10-25
 
 Activity inputs and successful results are recorded in the parent Workflow's history. Large payloads increase conversion cost, network traffic, persistence, history retrieval, and replay overhead. Small payloads still create many events when the Workflow orchestrates a very large number of Activities.
 
-For serialization and value boundaries, start with the [Temporal Overview](README.md). For an application design that passes IDs instead of bulk rows, see [Batch Processing](batch-processing.md).
+For serialization and value boundaries, start with the [Temporal Overview](index.md). For an application design that passes IDs instead of bulk rows, see [Batch Processing](batch-processing.md).
 
 ## Keep Payloads and Event Counts Bounded
 

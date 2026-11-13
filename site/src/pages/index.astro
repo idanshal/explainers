@@ -1,0 +1,66 @@
+---
+import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
+import catalog from '../data/catalog.json';
+
+const totalExplainers = catalog.reduce((total, category) => total + category.entries.length, 0);
+const basePath = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : `${import.meta.env.BASE_URL}/`;
+const withBase = (route) => `${basePath}${route.replace(/^\/+/, '')}`;
+---
+
+<StarlightPage frontmatter={{ title: 'Explainers', description: 'Clear mental models for software, tools, and systems.', template: 'splash' }}>
+	<main class="library-home">
+		<section class="opening" aria-labelledby="page-title">
+			<div class="opening-copy">
+				<p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> An independent field guide</p>
+				<h1 id="page-title">Understand<br />what's underneath.</h1>
+				<p class="opening-note">Practical explainers for the systems we build with, and the ideas that make them work.</p>
+				<a class="browse-link" href="#library">Browse the library <span aria-hidden="true">&darr;</span></a>
+			</div>
+			<div class="opening-figure" aria-label="A path from questions to working systems">
+				<div class="figure-heading"><span>THE WORKING MODEL</span><span>01 / 04</span></div>
+				<ol class="model-path">
+					<li><span class="model-number">01</span><span>Question</span></li>
+					<li><span class="model-number">02</span><span>Concept</span></li>
+					<li><span class="model-number">03</span><span>Trade-off</span></li>
+					<li><span class="model-number">04</span><span>Practice</span></li>
+				</ol>
+				<p class="figure-foot">Start with the why. Keep the how.</p>
+			</div>
+				<div class="opening-index" aria-hidden="true">FIELD<br />NOTES<br /><span>OPEN BY DESIGN</span></div>
+		</section>
+
+		<section class="library" id="library" aria-labelledby="library-title">
+			<div class="section-heading">
+				<div>
+					<p class="eyebrow">The collection</p>
+					<h2 id="library-title">Choose a thread.</h2>
+				</div>
+				<p class="collection-count"><strong>{String(totalExplainers).padStart(2, '0')}</strong> explainers<br />across <strong>{String(catalog.length).padStart(2, '0')}</strong> topics</p>
+			</div>
+
+			<div class="topic-list">
+				{catalog.map((category, index) => {
+					const visibleEntries = category.entries;
+					return (
+						<section class="topic-row" id={`topic-${category.name.toLowerCase().replaceAll(' ', '-')}`}>
+							<div class="topic-meta">
+								<span class="topic-number">{String(index + 1).padStart(2, '0')}</span>
+														<h3>{category.route ? <a href={withBase(category.route)}>{category.name}</a> : category.name}</h3>
+								<span class="topic-count">{String(category.entries.length).padStart(2, '0')} guides</span>
+							</div>
+							<ul class="topic-links">
+								{visibleEntries.map((entry) => (
+									<li><a href={withBase(entry.route)}>{entry.title}<span aria-hidden="true">↗</span></a></li>
+								))}
+							</ul>
+						</section>
+					);
+				})}
+			</div>
+		</section>
+		<footer class="library-footer">
+			<span>Written to be understood. Kept in the open.</span>
+			<a href="https://github.com/idanshal/explainers">Read the source on GitHub <span aria-hidden="true">↗</span></a>
+		</footer>
+	</main>
+</StarlightPage>

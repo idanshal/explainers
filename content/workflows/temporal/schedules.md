@@ -2,7 +2,7 @@
 
 Research checked: 2026-10-25
 
-A Schedule controls recurring Workflow starts. Its timing, overlap policy, and lifecycle are separate from the [Activity retry rules](activities-and-failures.md) inside each Workflow. Start with the [Temporal Overview](README.md) if those execution boundaries are unfamiliar.
+A Schedule controls recurring Workflow starts. Its timing, overlap policy, and lifecycle are separate from the [Activity retry rules](activities-and-failures.md) inside each Workflow. Start with the [Temporal Overview](index.md) if those execution boundaries are unfamiliar.
 
 ## Use the Current CLI
 

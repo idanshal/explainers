@@ -1,10 +1,14 @@
+---
+title: "Batch Processing with Temporal"
+---
+
 # Batch Processing with Temporal
 
 Research checked: 2026-10-25
 
 A Workflow can coordinate fetching database rows and making HTTP calls without carrying every row through its history. Choose the consistency model, unit of work, concurrency bound, and recovery policy deliberately.
 
-This article assumes the [Temporal execution model](README.md), [Activity reliability rules](activities-and-failures.md), and [data/history boundaries](data-and-history.md). Examples use illustrative Java fragments; batch schemas are application design recommendations, not prescribed Temporal schemas.
+This article assumes the [Temporal execution model](index.md), [Activity reliability rules](activities-and-failures.md), and [data/history boundaries](data-and-history.md). Examples use illustrative Java fragments; batch schemas are application design recommendations, not prescribed Temporal schemas.
 
 ## Option A: Page Existing Data and Pass IDs
 

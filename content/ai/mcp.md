@@ -42,7 +42,7 @@ Context7 is documentation context, not the library itself and not a guarantee th
 
 This is a documentation-retrieval integration, not the Temporal platform, an SDK, or a way to run or inspect a Workflow Execution. Search results are selected by relevance and may be incomplete; follow the returned source links when exact wording, version details, or full context matter. MCP server capabilities and result formatting depend on the specific integration and host.
 
-Use this when the question is specifically about Temporal and its concepts or docs. It searches Temporal-focused knowledge sources; it is not a general-purpose documentation index for arbitrary libraries. For Temporal itself, start with the [Temporal Overview](../workflows/temporal/README.md).
+Use this when the question is specifically about Temporal and its concepts or docs. It searches Temporal-focused knowledge sources; it is not a general-purpose documentation index for arbitrary libraries. For Temporal itself, start with the [Temporal Overview](../workflows/temporal/index.md).
 
 ## Protocol Versus Integration
 

@@ -2,7 +2,7 @@
 
 Research checked: 2026-10-25
 
-Workflow concurrency, asynchronous Activity completion, and virtual threads solve different problems. None permits arbitrary threaded I/O inside Workflow code or makes an in-memory background job durable. Start with the [Temporal Overview](README.md) for replay and execution boundaries.
+Workflow concurrency, asynchronous Activity completion, and virtual threads solve different problems. None permits arbitrary threaded I/O inside Workflow code or makes an in-memory background job durable. Start with the [Temporal Overview](index.md) for replay and execution boundaries.
 
 ## Three Distinct Mechanisms
 
