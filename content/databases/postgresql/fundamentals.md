@@ -2,8 +2,7 @@
 
 Research checked: 2026-11-12
 
-New to database models? Start with [Choosing a Database](../concepts/database-types.md).
-Then read this guide before the [PostgreSQL SQL Lab](sql-lab.md).
+PostgreSQL is a relational database management system: it stores rows in tables, accepts SQL queries, and provides constraints and transactions to protect data integrity. This guide introduces the concepts needed to connect an application and work with its data. No running database is required for the conceptual sections.
 
 ## What Is PostgreSQL?
 

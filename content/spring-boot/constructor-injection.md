@@ -1,6 +1,8 @@
 # Constructor Injection in Spring Boot
 
-Constructor injection is generally recommended in Spring Boot because it makes dependencies explicit and safer.
+Dependency injection means supplying an object's collaborators from outside rather than constructing or looking them up inside it. With constructor injection, those collaborators are parameters of the constructor. Spring creates managed objects, called beans, and supplies matching dependencies when constructing them.
+
+Constructor injection is generally recommended in Spring Boot because it makes dependencies explicit and safer. The pattern also works in ordinary Java code without Spring; examples assume familiarity with classes, constructors, and interfaces.
 
 ## Main Advantages
 

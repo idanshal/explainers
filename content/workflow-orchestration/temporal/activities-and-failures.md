@@ -1,5 +1,7 @@
 # Temporal Activities and Failures
 
+Temporal coordinates durable work through Workflows and Activities. A Workflow records orchestration decisions in an execution history; an Activity performs external work such as a database operation or HTTP request. Activity execution can be retried, so failure handling must account for both delays and duplicate effects. Java SDK fragments below illustrate the policies rather than a complete application.
+
 Research checked: 2026-10-25
 
 Activity reliability depends on timeouts, retries, heartbeats, cancellation, and duplicate-safe effects working together. For the execution model and serialized Activity boundaries, start with the [Temporal Overview](index.md).

@@ -2,8 +2,7 @@
 
 Research checked: 2026-11-12
 
-Previous: [Graph Database Fundamentals](../concepts/graph-database-fundamentals.md). Next:
-[Neo4j with Java and Spring Boot](neo4j-java-spring-boot.md).
+Neo4j stores entities as nodes and their connections as relationships. Cypher queries match those graph patterns. This exercise supplies database startup, a sample graph, and queries; no previous lab is required.
 
 This lab uses a small social network. Run the sections in order in a **fresh,
 local database**. The examples target Neo4j Community `2026.10.2`; syntax and

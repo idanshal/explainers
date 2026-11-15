@@ -1,5 +1,7 @@
 # JPA ID Generation and Hibernate Schema Management
 
+JPA, now Jakarta Persistence, specifies how Java objects can map to database records. Hibernate is a persistence implementation commonly used by Spring Boot. Identifier generation and schema management operate at different levels: one chooses record IDs, while the other checks or changes database structure.
+
 Two related JPA and Hibernate settings answer different questions:
 
 - `@GeneratedValue(strategy = GenerationType.IDENTITY)` controls how a new entity's primary key is generated.

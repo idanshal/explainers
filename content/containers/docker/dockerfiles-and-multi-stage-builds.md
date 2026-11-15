@@ -1,7 +1,5 @@
 # Dockerfiles and Image Builds
 
-Part of [Docker: A Developer Guide](index.md). This guide owns how an application becomes an image, from build context and instructions to caching, multi-stage builds, and secure defaults.
-
 A **Dockerfile** is a recipe for building a container image. It selects a base filesystem, adds the application and its dependencies, and declares defaults for running it. It is not a script that runs from top to bottom every time a container starts.
 
 **Documentation baseline:** checked on November 5, 2026 against Docker's current Dockerfile reference, build best practices, multi-stage build, and security documentation. Examples target **Linux containers with BuildKit** and the stable `docker/dockerfile:1` frontend. Docker Desktop on macOS runs these containers in a Linux VM; Windows container instructions and permissions differ.

@@ -2,8 +2,7 @@
 
 Research checked: 2026-11-12
 
-Previous: [Neo4j and Cypher Lab](neo4j-cypher-lab.md). Start the database and
-run its constraint and seed first; this guide uses the same people and follows.
+Neo4j stores nodes and relationships in a graph. Java applications connect through a driver or Spring Data Neo4j to execute Cypher queries and map graph data to objects. This example exposes a small people-and-follows graph through a Spring Boot application; the required database setup is included below.
 The examples were checked with Spring Boot 3.5.7, Java 25, and Neo4j 2026.10.2;
 check compatibility and APIs when choosing other versions.
 
@@ -21,6 +20,37 @@ Java domain objects. Spring Boot configures these components from application
 properties. You can use the driver directly, Spring Data, or both in one app.
 Spring Data Neo4j is not JPA: Neo4j is not a relational database, so JPA
 annotations, SQL, and Hibernate are not the API used here.
+
+## Prepare the Local Graph
+
+Use a running local Docker engine and free host ports `7474` and `7687`:
+
+```sh
+docker run --name graph-java-db --detach \
+    --publish 127.0.0.1:7474:7474 --publish 127.0.0.1:7687:7687 \
+    --env NEO4J_AUTH=neo4j/graphpass123 \
+    neo4j:2026.10.2
+```
+
+Wait for startup using `docker logs graph-java-db`, then open `http://localhost:7474`. Sign in as `neo4j` with the local-learning password `graphpass123`, connecting to `bolt://localhost:7687`. Execute these Cypher statements separately in Neo4j Browser:
+
+```cypher
+CREATE CONSTRAINT person_id IF NOT EXISTS
+FOR (person:Person) REQUIRE person.id IS UNIQUE;
+```
+
+```cypher
+MERGE (alice:Person {id: 'alice'}) SET alice.name = 'Alice'
+MERGE (bob:Person {id: 'bob'}) SET bob.name = 'Bob'
+MERGE (carol:Person {id: 'carol'}) SET carol.name = 'Carol'
+MERGE (dana:Person {id: 'dana'}) SET dana.name = 'Dana'
+MERGE (alice)-[aliceBob:FOLLOWS]->(bob) SET aliceBob.since = 2022
+MERGE (bob)-[bobCarol:FOLLOWS]->(carol) SET bobCarol.since = 2023
+MERGE (alice)-[aliceDana:FOLLOWS]->(dana) SET aliceDana.since = 2024
+RETURN alice, bob, carol, dana;
+```
+
+Use a fresh learning database; the seed sets these names and relationship properties. The container's data is disposable. After finishing, `docker rm --force --volumes graph-java-db` deliberately removes this example and its anonymous storage. Existing or managed databases are alternatives: adapt credentials, encryption, and the URI. For deeper Cypher practice, see the optional [Cypher lab](neo4j-cypher-lab.md).
 
 ## 1. Create a Spring Boot Project
 

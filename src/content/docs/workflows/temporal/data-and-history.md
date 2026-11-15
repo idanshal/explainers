@@ -4,11 +4,13 @@ title: "Temporal Data and History"
 
 # Temporal Data and History
 
+Temporal persists an execution history so a Workflow can reconstruct its state through replay. Activities perform external work; their inputs and successful results cross a serialized boundary and become part of the recorded execution. That boundary separates orchestration state from bulk business data.
+
 Research checked: 2026-10-25
 
 Activity inputs and successful results are recorded in the parent Workflow's history. Large payloads increase conversion cost, network traffic, persistence, history retrieval, and replay overhead. Small payloads still create many events when the Workflow orchestrates a very large number of Activities.
 
-For serialization and value boundaries, start with the [Temporal Overview](index.md). For an application design that passes IDs instead of bulk rows, see [Batch Processing](batch-processing.md).
+For more detail on serialization and value boundaries, see [Temporal Overview](../../../../../content/workflow-orchestration/temporal/index.md). For an application design that passes IDs instead of bulk rows, see [Batch Processing](batch-processing.md).
 
 ## Keep Payloads and Event Counts Bounded
 

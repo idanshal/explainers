@@ -1,4 +1,4 @@
-# Maven Plugins Explained
+# Maven Plugins
 
 Maven plugins perform build tasks such as compiling code, packaging an application, or producing extra artifacts. They run during Maven commands; they are not normally libraries used by the application at runtime.
 

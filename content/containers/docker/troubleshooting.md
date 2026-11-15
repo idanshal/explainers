@@ -1,6 +1,6 @@
 # Docker Troubleshooting and Daily Operations
 
-Part of [Docker: A Developer Guide](index.md). Use this guide when a build fails, a container exits, a service is unreachable, or disk usage grows. Start with evidence and the smallest affected resource, not a system-wide reset.
+Docker runs application processes in containers created from images. Failures can come from the build, the Docker engine, application configuration, network connectivity, or storage. Use this diagnostic workflow when a build fails, a container exits, a service is unreachable, or disk usage grows. Start with evidence and the smallest affected resource, not a system-wide reset.
 
 Documentation checked: 2026-11-15. Commands assume Linux containers; substitute your actual container or Compose service names.
 

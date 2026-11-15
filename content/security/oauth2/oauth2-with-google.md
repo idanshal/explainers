@@ -2,7 +2,7 @@
 
 Research checked: 2026-11-10
 
-This example applies the shared [OAuth 2.0 authorization model](fundamentals.md) to a server-side web application that signs in a Google user and reads their Google Calendar. It uses OpenID Connect (OIDC) for identity and an OAuth access token for Calendar API access, with authorization code flow and PKCE.
+OAuth 2.0 delegates API access through tokens rather than giving an application the user's password. OpenID Connect (OIDC) adds an identity layer for sign-in. This example uses both in a server-side web application that signs in a Google user and reads their Google Calendar, with authorization code flow and PKCE. The roles and flow are described below; [OAuth 2.0 fundamentals](fundamentals.md) provides optional broader context.
 
 The protocol is the same family used by [Microsoft Entra ID](oauth2-with-azure.md), but registration, scopes, endpoints, and token policies differ. This is a protocol walkthrough, not a complete runnable application. Use a maintained Google-compatible OAuth/OIDC library that supports the client type and handles PKCE and token validation.
 

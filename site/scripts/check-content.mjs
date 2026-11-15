@@ -35,23 +35,26 @@ async function checkLinks(absolutePath, relativePath, baseDir) {
 	}
 }
 
-async function checkDirectory(directory, relativeDirectory = '') {
+async function checkDirectory(directory, relativeDirectory = '', baseDir = contentDir) {
 	const entries = await readdir(directory, { withFileTypes: true });
 
 	for (const entry of entries) {
 		const relativePath = path.posix.join(relativeDirectory, entry.name);
 		const absolutePath = path.join(directory, entry.name);
 		if (entry.isDirectory()) {
-			await checkDirectory(absolutePath, relativePath);
+			await checkDirectory(absolutePath, relativePath, baseDir);
 		} else if (entry.isFile() && entry.name.endsWith('.md')) {
 			articleCount += 1;
-			await checkLinks(absolutePath, relativePath, contentDir);
+			await checkLinks(absolutePath, relativePath, baseDir);
 		}
 	}
 }
 
 await checkLinks(path.join(repoDir, 'README.md'), 'README.md', repoDir);
+await checkLinks(path.join(repoDir, 'WEBSITE.md'), 'WEBSITE.md', repoDir);
+await checkLinks(path.join(siteDir, 'README.md'), 'site/README.md', repoDir);
 await checkDirectory(contentDir);
+await checkDirectory(path.join(repoDir, 'src/content/docs'), 'src/content/docs', repoDir);
 
 if (brokenLinks.length) {
 	console.error(`Found ${brokenLinks.length} broken local Markdown links:`);

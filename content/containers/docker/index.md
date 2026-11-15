@@ -73,7 +73,7 @@ The container listens on port `80`; your browser reaches it through host port `8
 | 6 | [Docker Compose](compose.md) | How do I define and operate a repeatable multi-service development stack? |
 | 7 | [Docker Troubleshooting and Daily Operations](troubleshooting.md) | How do I investigate failures and clean up without losing data? |
 
-The detailed build guides use a Spring Boot Orders API as a concrete example. The underlying Docker concepts apply to other languages; that application is illustrative, not included in this repository.
+The detailed build examples use a Spring Boot Orders API as an illustrative application. The underlying Docker concepts apply to other languages; adapt application-specific commands to your own project. The local-service, networking, and Compose exercises need no application source code.
 
 ## Everyday Decisions
 

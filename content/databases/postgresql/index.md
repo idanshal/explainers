@@ -1,4 +1,8 @@
-# PostgreSQL Explainers
+# PostgreSQL
+
+PostgreSQL is an open-source relational database management system. It stores rows in tables, uses SQL for querying and changes, and provides constraints and transactions to help preserve data integrity under concurrent use.
+
+Applications connect through a driver and authenticate as a database role. Tables, indexes, schema migrations, and connection pools remain relevant whether the application uses SQL directly or an object-relational mapper such as Hibernate. A local instance is useful for learning; a deployed database also needs security, backups, monitoring, and an upgrade plan.
 
 New to databases? Begin with [Choosing a Database](../concepts/database-types.md), then
 follow this learning path:
@@ -15,4 +19,4 @@ follow this learning path:
 - [Database Connection Exhaustion in Tests](../../spring-boot/testing/database-connection-exhaustion.md): Connection pools and a worked PostgreSQL example.
 - [Shared PostgreSQL Testcontainers](../../spring-boot/testing/shared-postgres-testcontainers.md): PostgreSQL containers in Spring Boot tests.
 
-Return to the [database index](../index.md) to browse all database topics.
+For a comparison with other data models, see [Databases](../index.md).

@@ -6,7 +6,7 @@ title: "Model Context Protocol (MCP)"
 
 Research checked: 2026-10-25
 
-MCP standardizes how an AI application connects to servers exposing tools, resources, and prompts. It is a connection protocol, not a model, an agent, or a guarantee that a connected tool's output is correct. For the broader vocabulary, start with [AI Concepts](concepts.md).
+MCP standardizes how an AI application connects to servers exposing tools, resources, and prompts. It is a connection protocol, not a model, an agent, or a guarantee that a connected tool's output is correct. For the broader vocabulary, see [AI Concepts](../../../../content/ai/concepts.md).
 
 ## Hosts, Clients, and Servers
 
@@ -46,7 +46,7 @@ Context7 is documentation context, not the library itself and not a guarantee th
 
 This is a documentation-retrieval integration, not the Temporal platform, an SDK, or a way to run or inspect a Workflow Execution. Search results are selected by relevance and may be incomplete; follow the returned source links when exact wording, version details, or full context matter. MCP server capabilities and result formatting depend on the specific integration and host.
 
-Use this when the question is specifically about Temporal and its concepts or docs. It searches Temporal-focused knowledge sources; it is not a general-purpose documentation index for arbitrary libraries. For Temporal itself, start with the [Temporal Overview](../workflows/temporal/index.md).
+Use this when the question is specifically about Temporal and its concepts or docs. It searches Temporal-focused knowledge sources; it is not a general-purpose documentation index for arbitrary libraries. For Temporal itself, see [Temporal Overview](../../../../content/workflow-orchestration/temporal/index.md).
 
 ## Protocol Versus Integration
 

@@ -112,7 +112,7 @@ Wrong context kinds, missing attributes, unexpected attribute types, rule order,
 
 ## 5. Walkthrough: Gate a New Pricing Path in Java
 
-This is an application integration example, not a LaunchDarkly project already created by this repository.
+This example requires your own LaunchDarkly project, environment, flag, and SDK credentials. The application code illustrates the integration; it does not provision those external resources.
 
 ### Configure the Flag First
 

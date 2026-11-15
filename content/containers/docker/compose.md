@@ -1,6 +1,6 @@
 # Docker Compose
 
-Part of [Docker: A Developer Guide](index.md). Compose describes related services, networks, and volumes in a YAML file, then manages them as a project. Use it for repeatable local application stacks rather than maintaining a long collection of handwritten `docker run` commands.
+Docker Compose describes related services, networks, and volumes in a YAML file, then manages them as a project. A service describes a component such as an API or database; Compose creates containers from those definitions. Use it for repeatable local application stacks rather than maintaining a long collection of handwritten `docker run` commands.
 
 Documentation checked: 2026-11-15. Commands use the current `docker compose` plugin, not the legacy standalone `docker-compose` binary. Check your installed version before using newer features.
 

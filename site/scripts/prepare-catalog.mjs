@@ -50,6 +50,18 @@ export function parseCatalog(markdown) {
 				route: toRoute(contentPath),
 				description: entry[3],
 			};
+			const metadata = entry[3].match(/\s+<!--\s*sidebar:\s*(.*?)\s*-->\s*$/);
+			if (metadata) {
+				const sidebar = JSON.parse(metadata[1]);
+				if (!sidebar || typeof sidebar !== 'object' || Array.isArray(sidebar)
+					|| Object.keys(sidebar).some((key) => !['label', 'order'].includes(key))
+					|| (sidebar.label !== undefined && (typeof sidebar.label !== 'string' || !sidebar.label.trim()))
+					|| (sidebar.order !== undefined && (typeof sidebar.order !== 'number' || !Number.isFinite(sidebar.order)))) {
+					throw new Error(`Invalid sidebar metadata for ${contentPath}: use an optional nonempty label and finite numeric order.`);
+				}
+				catalogEntry.description = entry[3].slice(0, metadata.index).trimEnd();
+				catalogEntry.sidebar = sidebar;
+			}
 			category.entries.push(catalogEntry);
 			section?.entries.push(catalogEntry);
 		}
@@ -63,6 +75,29 @@ export function parseCatalog(markdown) {
 	}
 
 	return categories;
+}
+
+export function createSidebar(catalog) {
+	const order = (entry) => entry.sidebar?.order ?? Infinity;
+	const links = (entries) => [...entries]
+		.sort((first, second) => order(first) - order(second))
+		.map((entry) => ({ label: entry.sidebar?.label ?? entry.title, link: entry.route }));
+
+	return [
+		{ label: 'Library', link: '/' },
+		...catalog.map((category) => ({
+			label: category.name,
+			collapsed: true,
+			items: [
+				...links(category.entries.filter((entry) => !category.sections.some((section) => section.entries.some((item) => item.contentPath === entry.contentPath)))),
+				...category.sections.map((section) => ({
+					label: section.name,
+					collapsed: true,
+					items: links(section.entries),
+				})),
+			],
+		})),
+	];
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

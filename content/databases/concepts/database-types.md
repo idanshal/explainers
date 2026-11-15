@@ -2,9 +2,7 @@
 
 Research checked: 2026-11-12
 
-Start here if you are new to databases or want to understand where Neo4j fits.
-Next: [Graph Database Fundamentals](graph-database-fundamentals.md), then the
-[Neo4j and Cypher Lab](../neo4j/neo4j-cypher-lab.md).
+A database model determines how information is represented and which queries are natural to express. Choose a model by the application's access patterns, consistency requirements, and operational constraints; a product's popularity is not a substitute for that fit.
 
 ## What Is a Database?
 

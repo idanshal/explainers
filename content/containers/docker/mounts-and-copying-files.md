@@ -1,6 +1,6 @@
 # Docker Storage
 
-Part of [Docker: A Developer Guide](index.md). This guide owns container filesystems, bind mounts, persistent volumes, file permissions, and one-time copies.
+Containers have their own filesystem view. Files written into a container's writable layer remain across stop/start but disappear when that container is removed. Mounts make external storage available at a container path so that data can have a different lifecycle.
 
 Use a **bind mount** when a container should use files from your existing filesystem. Use a **volume** when Docker should manage persistent application storage. Use **`docker cp`** when you want a one-time copy into or out of a container rather than a shared path.
 

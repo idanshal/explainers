@@ -1,12 +1,14 @@
 # Docker Images and Containers
 
-Part of [Docker: A Developer Guide](index.md). This guide owns the image lifecycle and single-container commands; start with the overview if images and containers are new to you.
+An image packages application files and runtime configuration. A container is a running or stopped instance created from that image, with its own runtime settings and filesystem changes. Building, distributing, and operating these objects are separate steps.
 
 `docker build` creates an image, `docker tag` adds a name referring to an existing local image, and `docker run` creates and starts a new container. They solve different problems; none is a substitute for the others.
 
 **Documentation baseline:** checked on November 5, 2026 against the current Docker CLI, Buildx/BuildKit, image-tag, and container-run documentation. Examples target Linux containers. Buildx drivers, image-store configuration, daemon permissions, platform support, and CLI versions can affect availability; use your installed command's `--help` to verify its options.
 
-This article uses the Spring Boot Orders API from [Dockerfiles and Image Builds](dockerfiles-and-multi-stage-builds.md). Build commands assume you are in that application's project root with its Dockerfile, Maven project, and source code. This explainer repository itself is not that application. For an example that needs no application source, start with the [first local service](index.md#first-local-service).
+Commands use `orders-api` as an illustrative application name. Build commands require an application project with a Dockerfile; replace the name, context, ports, and application arguments with your project's values. The [Dockerfiles and Image Builds](dockerfiles-and-multi-stage-builds.md) guide provides a Spring Boot example, but the lifecycle is language-independent.
+
+For a minimal exercise requiring no source project, use `docker run --detach --name docker-image-demo --publish 127.0.0.1:8080:80 nginx:stable-alpine`, visit `http://127.0.0.1:8080`, inspect it with `docker logs docker-image-demo`, and remove only that exercise container with `docker rm --force docker-image-demo`. Use a free host port and a running local Docker engine.
 
 ## The Lifecycle
 

@@ -2,8 +2,7 @@
 
 Research checked: 2026-11-12
 
-Previous: [PostgreSQL Fundamentals](fundamentals.md). Next:
-[PostgreSQL with Java and Spring Boot](java-spring-boot.md).
+PostgreSQL is a relational database, and SQL is the language used to create tables, query rows, and change data. This exercise supplies its own database startup, schema, and sample records; no previous lab is required.
 
 This lab uses a small bookstore and PostgreSQL 18.6. Run its sections in order
 against a fresh, local database. SQL does not require Java. Statements ending

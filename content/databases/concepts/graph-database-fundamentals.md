@@ -2,7 +2,7 @@
 
 Research checked: 2026-11-12
 
-Previous: [Choosing a Database](database-types.md). Next: [Neo4j and Cypher Lab](../neo4j/neo4j-cypher-lab.md).
+A graph database represents entities and their connections explicitly, allowing queries to follow relationships and discover paths. This guide uses a property graph and a small social network to explain the model without requiring a running database or knowledge of Cypher.
 
 ## The Idea
 

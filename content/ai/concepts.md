@@ -56,7 +56,7 @@ For example, a UI-design skill can guide a coding agent's design decisions. The 
 
 ## Further Reading
 
-- [AI Explainers](index.md): The section overview and suggested reading path.
+- [AI](index.md): Models, execution capabilities, and how to evaluate a developer-facing AI workflow.
 - [Coding Agents](coding-agents.md): Product interfaces, execution environments, and permissions.
 - [Tools in VS Code](tools-in-vscode.md): Callable operations, tool sources, and execution approvals.
 - [Agent Skills](skills.md): Reusable guidance, compatibility, and a specialized skill example.

@@ -1,10 +1,11 @@
 # Explainers Website
 
-The website is built directly from the articles in `src/content/docs`. Each page keeps its H1 for GitHub readability and uses frontmatter for its browser title. The topic catalog in the root `README.md` also drives the homepage and sidebar.
+The active website is built from the canonical Markdown articles in `content/` by the Astro project in `site/`. Each article uses a subject-based H1; the site supplies browser metadata without requiring frontmatter. The root README catalog drives the homepage and navigation. See [site authoring and navigation rules](site/README.md) for optional sidebar metadata and standalone article standards. Older files in `src/content/docs/` are not used by this site.
 
 ## Local Development
 
 ```sh
+cd site
 npm ci
 npm run dev
 ```

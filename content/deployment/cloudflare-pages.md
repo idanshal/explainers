@@ -67,7 +67,7 @@ For a team using supported Git hosting, Git integration is often the easiest dai
 
 ## 4. Walkthrough: A Site with a Server-Side Endpoint
 
-This is a documentation example to create in a separate project, not a service already deployed by this repository.
+Create the example in a separate application project. The following steps describe a new deployment, not an existing service; supply your own Cloudflare account and project configuration.
 
 ### Prerequisites and Layout
 

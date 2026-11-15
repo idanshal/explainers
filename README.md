@@ -6,7 +6,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### AI
 
-- [AI Explainers](content/ai/index.md): A reading path through concepts, coding agents, tools, integrations, and context management.
+- [AI](content/ai/index.md): Models, agents, tools, reusable guidance, integrations, and context management. <!-- sidebar: {"label":"Overview","order":0} -->
 
 #### Foundations
 
@@ -28,7 +28,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### Databases
 
-- [Database Explainers](content/databases/index.md): Browse database concepts and product-specific learning paths.
+- [Databases](content/databases/index.md): Database models, product choices, and learning paths. <!-- sidebar: {"label":"Overview","order":0} -->
 
 #### Concepts
 
@@ -39,14 +39,14 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 #### PostgreSQL
 
-- [PostgreSQL](content/databases/postgresql/index.md): Relational fundamentals, an SQL lab, and Java/Spring Boot integration.
+- [PostgreSQL](content/databases/postgresql/index.md): Relational fundamentals, an SQL lab, and Java/Spring Boot integration. <!-- sidebar: {"label":"Overview","order":0} -->
 - [PostgreSQL Fundamentals](content/databases/postgresql/fundamentals.md): Tables, keys, SQL, connections, and transactions.
 - [PostgreSQL and SQL: A Hands-On Lab](content/databases/postgresql/sql-lab.md): Set up PostgreSQL and query a bookstore database.
 - [PostgreSQL with Java and Spring Boot](content/databases/postgresql/java-spring-boot.md): Connect with JDBC and build a Spring Data JPA API.
 
 #### Neo4j
 
-- [Neo4j](content/databases/neo4j/index.md): Graph fundamentals, Cypher, and Java/Spring Boot integration.
+- [Neo4j](content/databases/neo4j/index.md): Graph fundamentals, Cypher, and Java/Spring Boot integration. <!-- sidebar: {"label":"Overview","order":0} -->
 - [Neo4j and Cypher: A Hands-On Lab](content/databases/neo4j/neo4j-cypher-lab.md): Set up Neo4j and query a small graph step by step.
 - [Neo4j with Java and Spring Boot](content/databases/neo4j/neo4j-java-spring-boot.md): Connect with the Java driver and Spring Data Neo4j.
 
@@ -107,7 +107,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 #### Docker
 
-- [Docker: A Developer Guide](content/containers/docker/index.md): Start here for containers, images, architecture, a first local service, and the learning path.
+- [Docker: A Developer Guide](content/containers/docker/index.md): Containers, images, architecture, a first local service, and the learning path. <!-- sidebar: {"label":"Overview","order":0} -->
 - [Dockerfiles and Image Builds](content/containers/docker/dockerfiles-and-multi-stage-builds.md): Build contexts, instructions, caching, multi-stage builds, users, and build secrets.
 - [Docker Images and Containers](content/containers/docker/build-tag-and-run.md): Build, tag, publish, run, inspect, and manage application containers.
 - [Docker Storage](content/containers/docker/mounts-and-copying-files.md): Bind mounts, named volumes, permissions, persistence, and copying files.
@@ -135,7 +135,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 #### Temporal
 
-- [Temporal Overview](content/workflow-orchestration/temporal/index.md): Start here for orchestration, replay, Activity value boundaries, and a production checklist.
+- [Temporal Overview](content/workflow-orchestration/temporal/index.md): Orchestration, replay, Activity value boundaries, and a production checklist. <!-- sidebar: {"label":"Overview","order":0} -->
 - [Temporal Activities and Failures](content/workflow-orchestration/temporal/activities-and-failures.md): Timeouts, retries, heartbeats, cancellation, failure conversion, and duplicate-safe effects.
 - [Temporal Data and History](content/workflow-orchestration/temporal/data-and-history.md): Payload limits, event counts, Continue-As-New, external storage, and retention.
 - [Batch Processing with Temporal](content/workflow-orchestration/temporal/batch-processing.md): Pagination, snapshots, bounded concurrency, durable batch tables, and recovery.
