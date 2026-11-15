@@ -18,6 +18,14 @@ Before choosing an agent, distinguish the interface from the environment where i
 
 Review approval requests carefully. Broad or automatic tool approval increases the risk of unwanted edits or commands. Review the resulting changes and run appropriate tests; an agent's completion message is not a substitute for verification.
 
+## GitHub Copilot in VS Code
+
+**GitHub Copilot in VS Code** provides an editor-based agent workflow: the agent can inspect a workspace, propose or make edits, and use tools to gather evidence and validate changes. The selected agent environment determines where work runs and which capabilities are available; an editor interface does not by itself mean execution is local.
+
+The model, agent runtime, and editor are different parts of the setup. Changing the model does not automatically grant new tools, credentials, or permissions. Likewise, installing an extension does not necessarily expose its commands to the agent.
+
+**Useful distinction:** Copilot in VS Code is not the same interface as Copilot CLI. For tool sources, selection, approval boundaries, and a test-fixing example in the editor, see [Tools in VS Code](tools-in-vscode.md).
+
 ## Copilot CLI
 
 **GitHub Copilot CLI** is GitHub's AI coding agent interface for a terminal. Start an interactive session in a project directory with `copilot`, or send a one-shot prompt with `copilot -p "..."`. It can explain, write, debug, and refactor code; work with GitHub repositories, issues, and pull requests; and use tools and MCP servers.
@@ -44,24 +52,18 @@ The CLI runs locally in a terminal and works against a local project. Its sandbo
 
 ## Specialized Skills
 
-A skill supplies reusable guidance to an agent; it is not another coding agent. Check the host product's supported skill format and loading behavior rather than assuming every skill works unchanged everywhere.
-
-### UI UX Pro Max
-
-**UI UX Pro Max** is an installable AI-agent skill and companion CLI, published in the `nextlevelbuilder/ui-ux-pro-max-skill` repository. It supplies searchable design references and workflow guidance to help an agent generate or improve user interfaces. The project describes catalogs for UI styles, color palettes, typography, chart types, UX guidance, and framework-specific recommendations, plus a design-system generator. It supports multiple coding assistants and frontend stacks.
-
-It is **design guidance and retrieval tooling**, not a UI framework, a hosted design service, or a replacement for product-specific design judgment. Check recommendations against the actual requirements, existing design system, accessibility needs, and codebase. Catalog counts and quality claims are maintained by the project and can change between releases.
-
-The repository recommends installing through its current `ui-ux-pro-max-cli` package (`uipro` command); search features require Python 3. Check its README for current assistant-specific setup, compatibility, and prerequisites before installing.
+A skill supplies reusable guidance to an agent; it is not another coding agent. See [Agent Skills](skills.md) for the distinction between instructions, skills, and tools, including the UI UX Pro Max example.
 
 ## Choosing a Tool
 
 Choose based on the execution environment, permissions, repository integrations, and customization your workflow needs, not just the model or product name. A local CLI, IDE integration, and cloud agent from the same vendor need not have identical capabilities or access.
 
-For documentation connections, see [MCP](mcp.md). For response concision and command-output filtering, see [Context Optimization](context-optimization.md).
+For editor capabilities, see [Tools in VS Code](tools-in-vscode.md). For documentation connections, see [MCP](mcp.md). For response concision and command-output filtering, see [Context Optimization](context-optimization.md).
 
 ## References
 
+- [VS Code: Agent tools](https://code.visualstudio.com/docs/agents/run/tools)
+- [VS Code: Agent harnesses](https://code.visualstudio.com/docs/agents/run/agent-harnesses)
 - [GitHub: About Copilot CLI](https://docs.github.com/en/copilot/concepts/agents/about-copilot-cli)
 - [Official Copilot CLI repository](https://github.com/github/copilot-cli)
 - [Claude Code overview](https://code.claude.com/docs/en/overview)
@@ -69,6 +71,5 @@ For documentation connections, see [MCP](mcp.md). For response concision and com
 - [OpenAI Codex](https://openai.com/codex/)
 - [Codex CLI repository and interface options](https://github.com/openai/codex)
 - [Codex CLI documentation](https://developers.openai.com/codex/cli)
-- [UI UX Pro Max project README](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill)
 
-Product capabilities are based on the linked documentation checked on the research date. Interfaces, permissions, and supported customization features can change; verify them for the installed release and organization policy.
+Product comparisons were checked on the research date above; the VS Code section was checked on 2026-11-15. Interfaces, permissions, and supported customization features can change; verify them for the installed release and organization policy.

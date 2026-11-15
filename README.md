@@ -6,10 +6,25 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 ### AI
 
+- [AI Explainers](content/ai/index.md): A reading path through concepts, coding agents, tools, integrations, and context management.
+
+#### Foundations
+
 - [AI Concepts](content/ai/concepts.md): Start here for models, prompts, context, agents, tools, skills, memory, and RAG.
-- [Coding Agents](content/ai/coding-agents.md): Copilot CLI, Claude Code, Codex, execution environments, permissions, and specialized skills.
-- [Context Optimization](content/ai/context-optimization.md): Input filtering, output concision, and the tradeoffs of Caveman and RTK.
+
+#### Agents and Tools
+
+- [Coding Agents](content/ai/coding-agents.md): VS Code, Copilot CLI, Claude Code, Codex, execution environments, and permissions.
+- [Tools in VS Code](content/ai/tools-in-vscode.md): How agents discover and call built-in, extension, and MCP tools, with approvals and troubleshooting.
+
+#### Skills
+
+- [Agent Skills](content/ai/skills.md): Reusable task guidance, compatibility checks, and the UI UX Pro Max example.
+
+#### Integrations and Context
+
 - [Model Context Protocol (MCP)](content/ai/mcp.md): Hosts, clients, servers, exposed capabilities, and documentation integrations.
+- [Context Optimization](content/ai/context-optimization.md): Input filtering, output concision, and the tradeoffs of Caveman and RTK.
 
 ### Databases
 
@@ -75,8 +90,13 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 - [Maven Plugins](content/build-tools/maven/plugins.md): Common build plugins and the role each plays.
 
+### Command-Line Tools
+
+- [jq: Query and Transform JSON](content/command-line-tools/jq.md): Essential filters, safe shell arguments, grouping, aggregation, and a worked order-summary example.
+
 ### Deployment
 
+- [GitHub Pages](content/deployment/github-pages.md): Static site hosting, project and user site URLs, branch publishing, GitHub Actions setup, and troubleshooting.
 - [Cloudflare Pages](content/deployment/cloudflare-pages.md): A practical site-and-API walkthrough, deployment workflows, configuration, routing, security, operations, and Pages versus Workers.
 
 #### Feature Flags
@@ -87,9 +107,13 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 #### Docker
 
-- [Dockerfiles, Permissions, and Multi-Stage Builds](content/containers/docker/dockerfiles-and-multi-stage-builds.md): Core instructions, build contexts, non-root users, secrets, and a Spring Boot build/runtime example.
-- [Building, Tagging, and Running Images](content/containers/docker/build-tag-and-run.md): Build and runtime flags, image tags and digests, publishing, networking, storage, and container lifecycle.
-- [Mounts and Copying Files](content/containers/docker/mounts-and-copying-files.md): Use host files through bind mounts, persist data with volumes, and copy files or directories into and out of containers.
+- [Docker: A Developer Guide](content/containers/docker/index.md): Start here for containers, images, architecture, a first local service, and the learning path.
+- [Dockerfiles and Image Builds](content/containers/docker/dockerfiles-and-multi-stage-builds.md): Build contexts, instructions, caching, multi-stage builds, users, and build secrets.
+- [Docker Images and Containers](content/containers/docker/build-tag-and-run.md): Build, tag, publish, run, inspect, and manage application containers.
+- [Docker Storage](content/containers/docker/mounts-and-copying-files.md): Bind mounts, named volumes, permissions, persistence, and copying files.
+- [Docker Networking](content/containers/docker/networking.md): Published ports, container DNS, service discovery, host access, and connectivity debugging.
+- [Docker Compose](content/containers/docker/compose.md): Run a repeatable local stack with health checks, secrets, persistent data, and a PostgreSQL/Adminer lab.
+- [Docker Troubleshooting and Daily Operations](content/containers/docker/troubleshooting.md): Diagnose builds, crashes, networking, permissions, health, disk usage, and safe cleanup.
 
 ### Networking
 

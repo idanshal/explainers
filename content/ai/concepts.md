@@ -28,7 +28,7 @@ Start here for the vocabulary used in AI-enabled workflows. A model, an agent, a
 
 **Skill**: Reusable task-specific know-how for an agent, usually instructions and sometimes reference files, templates, or scripts. The open Agent Skills format packages these in a folder with a `SKILL.md`; individual products may also use "skill" for their own, non-portable customization format. A skill guides an agent but does not run independently as an agent.
 
-For example, a UI-design skill can guide a coding agent's design decisions. The agent still decides what to do and uses tools to edit or test the application. A concrete example is described under [Specialized Skills](coding-agents.md#specialized-skills).
+For example, a UI-design skill can guide a coding agent's design decisions. The agent still decides what to do and uses tools to edit or test the application. See [Agent Skills](skills.md) for a concrete example and compatibility checks.
 
 ## Memory, Retrieval, and Connections
 
@@ -56,7 +56,10 @@ For example, a UI-design skill can guide a coding agent's design decisions. The 
 
 ## Further Reading
 
-- [Coding Agents](coding-agents.md): Product interfaces, execution environments, permissions, and specialized skills.
+- [AI Explainers](index.md): The section overview and suggested reading path.
+- [Coding Agents](coding-agents.md): Product interfaces, execution environments, and permissions.
+- [Tools in VS Code](tools-in-vscode.md): Callable operations, tool sources, and execution approvals.
+- [Agent Skills](skills.md): Reusable guidance, compatibility, and a specialized skill example.
 - [Context Optimization](context-optimization.md): Input filtering, output concision, and token-saving tradeoffs.
 - [MCP](mcp.md): Protocol roles and concrete server integrations.
 

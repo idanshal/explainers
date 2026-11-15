@@ -1,4 +1,6 @@
-# Docker Mounts and Copying Files
+# Docker Storage
+
+Part of [Docker: A Developer Guide](index.md). This guide owns container filesystems, bind mounts, persistent volumes, file permissions, and one-time copies.
 
 Use a **bind mount** when a container should use files from your existing filesystem. Use a **volume** when Docker should manage persistent application storage. Use **`docker cp`** when you want a one-time copy into or out of a container rather than a shared path.
 
@@ -287,6 +289,22 @@ Replace `CONTAINER` with a real name or ID. `id` shows the exec process's identi
 | A remote container cannot bind local files | Bind mounts use the daemon host; transfer files or use `docker cp` instead. |
 
 On macOS, Docker Desktop may need permission to share the source directory. Use a suitable project directory and the Desktop file-sharing/privacy settings rather than granting the container privileged mode. For a remote Docker context, inspect `docker context show` and verify where the daemon actually runs.
+
+## Backups and Database Upgrades
+
+A named volume survives container removal, but it does not protect against accidental deletion, corruption, or application mistakes. Back up important state outside the volume's own lifecycle and test restoration before relying on the backup.
+
+For databases, use the database's supported backup tooling or a coordinated, application-consistent snapshot. Copying a live database directory with `docker cp` or archiving a live volume is not automatically a valid backup.
+
+For the PostgreSQL service in the [Compose lab](compose.md), a logical backup can be taken from its project directory with:
+
+```sh
+docker compose exec -T db pg_dump -U app -d app_dev --format=custom > app_dev.dump
+```
+
+Check the command's exit status and protect the dump as sensitive data. Test a restore into a separate compatible database before considering the backup verified. Do not overwrite the original database merely to test recovery.
+
+A database major-version upgrade may require a logical dump/restore or a supported in-place upgrade procedure. Reusing an old data volume with an incompatible new database image can fail or damage the upgrade process. Check the image's documented storage paths and the database's compatibility requirements first.
 
 ## Bottom Line
 

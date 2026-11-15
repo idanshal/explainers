@@ -1,10 +1,12 @@
-# Building, Tagging, and Running Docker Images
+# Docker Images and Containers
+
+Part of [Docker: A Developer Guide](index.md). This guide owns the image lifecycle and single-container commands; start with the overview if images and containers are new to you.
 
 `docker build` creates an image, `docker tag` adds a name referring to an existing local image, and `docker run` creates and starts a new container. They solve different problems; none is a substitute for the others.
 
 **Documentation baseline:** checked on November 5, 2026 against the current Docker CLI, Buildx/BuildKit, image-tag, and container-run documentation. Examples target Linux containers. Buildx drivers, image-store configuration, daemon permissions, platform support, and CLI versions can affect availability; use your installed command's `--help` to verify its options.
 
-This article uses the Spring Boot Orders API from [Dockerfiles, Permissions, and Multi-Stage Builds](dockerfiles-and-multi-stage-builds.md). Build commands assume you are in that application's project root with its Dockerfile, Maven project, and source code. This explainer repository itself is not that application.
+This article uses the Spring Boot Orders API from [Dockerfiles and Image Builds](dockerfiles-and-multi-stage-builds.md). Build commands assume you are in that application's project root with its Dockerfile, Maven project, and source code. This explainer repository itself is not that application. For an example that needs no application source, start with the [first local service](index.md#first-local-service).
 
 ## The Lifecycle
 
@@ -239,19 +241,11 @@ Do not add `--privileged`, mount `/var/run/docker.sock`, or disable security pro
 
 `EXPOSE 8080` is image metadata. `-p 127.0.0.1:9090:8080` publishes host port `9090` to container port `8080`. Neither setting makes the application actually listen there. Publishing a host port is not required for containers on the same user-defined network to communicate on their container ports.
 
-Inside a container, `localhost` refers to that container, not your laptop and not a sibling database container. Put communicating containers on a user-defined network:
-
-```bash
-docker network create orders-net
-```
-
-Attach each relevant container with `--network orders-net`. If the database container is named `orders-db`, the app uses `orders-db` and the database's internal listening port. Do not configure it to use the database's published host port.
-
-To reach a service on the Docker Desktop host, use `host.docker.internal`. On a native Linux Engine installation, this name may need an explicit mapping such as `--add-host host.docker.internal:host-gateway`; host service binding and firewall rules must permit access. Do not default to host networking as a fix for a mistaken address.
+Inside a container, `localhost` refers to that container, not your laptop or a sibling database. See [Docker Networking](networking.md) for the address-selection rules, a runnable two-container lab, host access, and a connectivity-debugging checklist.
 
 ## Storage, Configuration, and Secrets
 
-For a hands-on walkthrough of host files, mount permissions, and `docker cp` in both directions, see [Mounts and Copying Files](mounts-and-copying-files.md).
+For a hands-on walkthrough of host files, mount permissions, persistent volumes, backups, and `docker cp` in both directions, see [Docker Storage](mounts-and-copying-files.md).
 
 A named volume stores persistent data independently of a container:
 
