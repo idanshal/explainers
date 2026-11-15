@@ -2,7 +2,7 @@
 
 Research checked: 2026-11-12
 
-Previous: [Graph Database Fundamentals](../graph-database-fundamentals.md). Next:
+Previous: [Graph Database Fundamentals](../concepts/graph-database-fundamentals.md). Next:
 [Neo4j with Java and Spring Boot](neo4j-java-spring-boot.md).
 
 This lab uses a small social network. Run the sections in order in a **fresh,

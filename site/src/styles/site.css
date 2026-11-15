@@ -345,6 +345,19 @@ body:has(.library-home) .content-panel:has(> .sl-container > h1#_top) {
 	color: var(--muted);
 }
 
+.topic-groups {
+	display: grid;
+	gap: 1.1rem;
+	min-width: 0;
+}
+
+.topic-group h4 {
+	margin: 0 0 0.35rem;
+	color: var(--ink);
+	font-size: 0.85rem;
+	font-weight: 600;
+}
+
 .topic-links {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));

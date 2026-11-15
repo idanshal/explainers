@@ -1,6 +1,6 @@
 # PostgreSQL Explainers
 
-New to databases? Begin with [Choosing a Database](../database-types.md), then
+New to databases? Begin with [Choosing a Database](../concepts/database-types.md), then
 follow this learning path:
 
 1. [PostgreSQL Fundamentals](fundamentals.md): Tables, keys, SQL, connections, and transactions.
@@ -9,9 +9,9 @@ follow this learning path:
 
 ## Related Guides
 
-- [Foreign Keys and Indexes](../foreign-keys-and-indexes.md): Relational integrity and PostgreSQL indexing behavior.
-- [Relational Table Patterns](../relational-table-patterns.md): Common relational modeling patterns.
-- [Flyway](../flyway.md): Track and apply database migrations.
+- [Foreign Keys and Indexes](../concepts/foreign-keys-and-indexes.md): Relational integrity and PostgreSQL indexing behavior.
+- [Relational Table Patterns](../concepts/relational-table-patterns.md): Common relational modeling patterns.
+- [Flyway](../migrations/flyway.md): Track and apply database migrations.
 - [Database Connection Exhaustion in Tests](../../spring-boot/testing/database-connection-exhaustion.md): Connection pools and a worked PostgreSQL example.
 - [Shared PostgreSQL Testcontainers](../../spring-boot/testing/shared-postgres-testcontainers.md): PostgreSQL containers in Spring Boot tests.
 

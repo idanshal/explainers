@@ -1,6 +1,6 @@
 # OAuth 2.0 Flow with Azure (Microsoft Entra ID)
 
-For the provider-independent idea, industry-standard status, and shared security model, start with [OAuth 2.0: Delegated API Authorization](oauth2.md). This article applies that framework to Microsoft Entra ID; [OAuth 2.0 with Google](oauth2-with-google.md) provides another implementation and highlights provider differences.
+For the provider-independent idea, industry-standard status, and shared security model, start with [OAuth 2.0: Delegated API Authorization](fundamentals.md). This article applies that framework to Microsoft Entra ID; [OAuth 2.0 with Google](oauth2-with-google.md) provides another implementation and highlights provider differences.
 
 OAuth 2.0 lets an application access an API with permission, without receiving the user's password. Microsoft Entra ID, formerly Azure Active Directory (Azure AD), implements OAuth 2.0 through the Microsoft identity platform.
 

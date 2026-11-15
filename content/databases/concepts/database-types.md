@@ -4,7 +4,7 @@ Research checked: 2026-11-12
 
 Start here if you are new to databases or want to understand where Neo4j fits.
 Next: [Graph Database Fundamentals](graph-database-fundamentals.md), then the
-[Neo4j and Cypher Lab](neo4j/neo4j-cypher-lab.md).
+[Neo4j and Cypher Lab](../neo4j/neo4j-cypher-lab.md).
 
 ## What Is a Database?
 

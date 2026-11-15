@@ -207,7 +207,7 @@ Try finding Bob's orders with `LEFT JOIN`, adding a book with `RETURNING id`,
 or counting items per order. Use `EXPLAIN SELECT ...` to inspect a plan;
 `EXPLAIN ANALYZE` **executes** the statement, including writes. A tiny teaching
 dataset may produce a sequential scan even when an index exists. See
-[Foreign Keys and Indexes](../foreign-keys-and-indexes.md) for constraint and
+[Foreign Keys and Indexes](../concepts/foreign-keys-and-indexes.md) for constraint and
 index tradeoffs. In application code, bind parameters instead of concatenating
 untrusted input; the [Java guide](java-spring-boot.md) shows how.
 

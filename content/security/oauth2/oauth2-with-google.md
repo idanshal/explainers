@@ -2,7 +2,7 @@
 
 Research checked: 2026-11-10
 
-This example applies the shared [OAuth 2.0 authorization model](oauth2.md) to a server-side web application that signs in a Google user and reads their Google Calendar. It uses OpenID Connect (OIDC) for identity and an OAuth access token for Calendar API access, with authorization code flow and PKCE.
+This example applies the shared [OAuth 2.0 authorization model](fundamentals.md) to a server-side web application that signs in a Google user and reads their Google Calendar. It uses OpenID Connect (OIDC) for identity and an OAuth access token for Calendar API access, with authorization code flow and PKCE.
 
 The protocol is the same family used by [Microsoft Entra ID](oauth2-with-azure.md), but registration, scopes, endpoints, and token policies differ. This is a protocol walkthrough, not a complete runnable application. Use a maintained Google-compatible OAuth/OIDC library that supports the client type and handles PKCE and token validation.
 
@@ -80,7 +80,7 @@ sequenceDiagram
 
 Generate a fresh random `state`, OIDC `nonce`, and PKCE `code_verifier`. Store them in a short-lived, browser-bound backend transaction, together with the expected provider and callback URI.
 
-Derive the challenge using `BASE64URL(SHA256(ASCII(code_verifier)))`, without Base64 padding. Keep the verifier private until the token exchange. See the [provider-neutral PKCE explanation](oauth2.md#why-pkce-exists) for what this protects.
+Derive the challenge using `BASE64URL(SHA256(ASCII(code_verifier)))`, without Base64 padding. Keep the verifier private until the token exchange. See the [provider-neutral PKCE explanation](fundamentals.md#why-pkce-exists) for what this protects.
 
 ### 2. Redirect to Google
 

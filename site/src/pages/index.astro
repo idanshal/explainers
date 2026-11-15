@@ -40,7 +40,7 @@ const withBase = (route) => `${basePath}${route.replace(/^\/+/, '')}`;
 
 			<div class="topic-list">
 				{catalog.map((category, index) => {
-					const visibleEntries = category.entries;
+						const visibleEntries = category.entries.filter((entry) => !category.sections.some((section) => section.entries.some((item) => item.contentPath === entry.contentPath)));
 					return (
 						<section class="topic-row" id={`topic-${category.name.toLowerCase().replaceAll(' ', '-')}`}>
 							<div class="topic-meta">
@@ -48,11 +48,23 @@ const withBase = (route) => `${basePath}${route.replace(/^\/+/, '')}`;
 														<h3>{category.route ? <a href={withBase(category.route)}>{category.name}</a> : category.name}</h3>
 								<span class="topic-count">{String(category.entries.length).padStart(2, '0')} guides</span>
 							</div>
-							<ul class="topic-links">
-								{visibleEntries.map((entry) => (
-									<li><a href={withBase(entry.route)}>{entry.title}<span aria-hidden="true">↗</span></a></li>
-								))}
-							</ul>
+								<div class="topic-groups">
+									{visibleEntries.length > 0 && <ul class="topic-links">
+										{visibleEntries.map((entry) => (
+											<li><a href={withBase(entry.route)}>{entry.title}<span aria-hidden="true">↗</span></a></li>
+										))}
+									</ul>}
+									{category.sections.map((section) => (
+										<section class="topic-group">
+											<h4>{section.name}</h4>
+											<ul class="topic-links">
+												{section.entries.map((entry) => (
+													<li><a href={withBase(entry.route)}>{entry.title}<span aria-hidden="true">↗</span></a></li>
+												))}
+											</ul>
+										</section>
+									))}
+								</div>
 						</section>
 					);
 				})}

@@ -4,7 +4,7 @@ Aspect-oriented programming (AOP) separates **what an operation does** from **be
 
 This explainer builds two method annotations: `@LogElapsedTime` and `@RetryOperation`. The examples use synchronous Java methods and Spring's proxy-based AOP. The setup below targets Spring Boot 3.x / Spring Framework 6.x; the custom aspects also illustrate the proxy model used in Spring Framework 7.x. A later section distinguishes Spring's production retry options.
 
-For annotation declarations, retention, and metadata, see [Java Annotations](../java/annotations.md).
+For annotation declarations, retention, and metadata, see [Java Annotations](../java/language/annotations.md).
 
 ## 1. Why AOP Exists
 

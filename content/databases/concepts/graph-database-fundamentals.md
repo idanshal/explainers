@@ -2,7 +2,7 @@
 
 Research checked: 2026-11-12
 
-Previous: [Choosing a Database](database-types.md). Next: [Neo4j and Cypher Lab](neo4j/neo4j-cypher-lab.md).
+Previous: [Choosing a Database](database-types.md). Next: [Neo4j and Cypher Lab](../neo4j/neo4j-cypher-lab.md).
 
 ## The Idea
 

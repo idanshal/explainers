@@ -1,5 +1,8 @@
 # Explainers Website
 
+In the root catalog, `###` headings define topics and `####` headings define
+nested groups. Previous article URLs are mapped in `src/data/redirects.json`.
+
 The website reads its Markdown directly from the sibling `content/` directory using Astro's filesystem content loader. The articles are the canonical source; builds do not copy, rewrite, or generate files in `content/`. Writers use a level-one heading for each title and ordinary relative `.md` links. The site adapter supplies Starlight's page metadata and routes at render time. The root `README.md` catalog drives the homepage and sidebar.
 
 ## Local Development

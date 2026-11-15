@@ -229,7 +229,7 @@ Ordinary `migrate` runs forward; it does not generate reverse SQL for you. A com
 
 The same migration model works through the CLI, build integrations, and the Java API. In Spring Boot applications, SQL files commonly live under `src/main/resources/db/migration`; automatic startup migration requires the appropriate Flyway dependencies and configuration for that Spring Boot version.
 
-For a related Java persistence discussion, see [JPA ID Generation and Hibernate Schema Management](../java/persistence/jpa-id-generation-and-hibernate-schema-management.md). When Flyway owns schema changes, avoid also asking Hibernate to independently create or update that same schema; use schema validation or disable Hibernate schema management as appropriate.
+For a related Java persistence discussion, see [JPA ID Generation and Hibernate Schema Management](../../java/persistence/jpa-id-generation-and-hibernate-schema-management.md). When Flyway owns schema changes, avoid also asking Hibernate to independently create or update that same schema; use schema validation or disable Hibernate schema management as appropriate.
 
 A typical deployment flow is:
 

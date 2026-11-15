@@ -249,7 +249,7 @@ These builders require real type information as input. They do not recover an un
 - **They do not change JVM erasure.** An ordinary list does not acquire a runtime `User` element-type check because a token exists nearby.
 - **They do not inspect arbitrary collections to discover their declared type.** Empty collections alone already make that approach impossible in general; inspecting current elements would not recover the declared generic contract either.
 - **They do not validate or convert by themselves.** A decoder or other consumer must interpret the captured `Type`. A cast is not a deserializer.
-- **They do not make abstract targets instantiable.** `List<User>` supplies type information, but a decoder still needs a way to construct `User` and any abstract payload types. See [Jackson 3 Mr Bean](jackson/jackson-3-mrbean.md) for a separate materialization mechanism.
+- **They do not make abstract targets instantiable.** `List<User>` supplies type information, but a decoder still needs a way to construct `User` and any abstract payload types. See [Jackson 3 Mr Bean](../jackson/jackson-3-mrbean.md) for a separate materialization mechanism.
 - **They do not make wildcards concrete.** A token for `List<? extends Number>` captures that wildcard; it does not identify a specific numeric subtype to instantiate.
 - **They do not make all inheritance paths simple.** Type variables across multiple superclass levels require resolution; the miniature `Token` implementation intentionally rejects indirect subclasses.
 - **They do not replace safe deserialization policies.** Supply expected application-owned target types; do not treat arbitrary client-supplied class names as trusted instructions for instantiation.

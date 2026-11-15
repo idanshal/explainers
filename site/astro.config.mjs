@@ -3,19 +3,30 @@ import { unified } from '@astrojs/markdown-remark';
 import starlight from '@astrojs/starlight';
 import mermaid from 'astro-mermaid';
 import catalog from './src/data/catalog.json' with { type: 'json' };
+import redirects from './src/data/redirects.json' with { type: 'json' };
 import rewriteContent from './scripts/rewrite-content.mjs';
 
+const link = (entry) => ({ label: entry.title, link: entry.route });
+const base = process.env.GITHUB_ACTIONS === 'true' ? '/explainers' : '/';
 const sidebar = [
 	{ label: 'Library', link: '/' },
 	...catalog.map((category) => ({
 		label: category.name,
-		items: category.entries.map((entry) => ({ label: entry.title, link: entry.route })),
+		items: [
+			...category.entries.filter((entry) => !category.sections.some((section) => section.entries.some((item) => item.contentPath === entry.contentPath))).map(link),
+			...category.sections.map((section) => ({
+				label: section.name,
+				collapsed: true,
+				items: section.entries.map(link),
+			})),
+		],
 	})),
 ];
 
 export default defineConfig({
 	site: 'https://idanshal.github.io',
-	base: process.env.GITHUB_ACTIONS === 'true' ? '/explainers' : '/',
+	base,
+	redirects: Object.fromEntries(Object.entries(redirects).map(([source, destination]) => [source, `${base === '/' ? '' : base}${destination}`])),
 	markdown: {
 		processor: unified({ remarkPlugins: [rewriteContent] }),
 	},

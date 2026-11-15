@@ -228,7 +228,7 @@ public class LaunchDarklyConfiguration {
 }
 ```
 
-Bind `launchdarkly.sdk-key` to a secret supplied externally, for example through Spring's external configuration. Do not commit the value. Inject the client into a small application-owned policy/service using [constructor injection](../spring-boot/constructor-injection.md).
+Bind `launchdarkly.sdk-key` to a secret supplied externally, for example through Spring's external configuration. Do not commit the value. Inject the client into a small application-owned policy/service using [constructor injection](../../spring-boot/constructor-injection.md).
 
 The bean above permits fallback operation after the startup wait; it does not implement a readiness policy. Decide whether this is acceptable for your application and expose degraded SDK status through appropriate monitoring. Avoid restart loops that make a LaunchDarkly outage take down an otherwise functional application.
 
@@ -349,7 +349,7 @@ Notice that the first assertion deliberately uses fallback `true` while the test
 
 `TestData` updates simulate received configuration changes, not internet propagation delays. This helper does not support every real targeting feature, including percentage rollouts. Test real rollout configuration separately; do not invent a local random implementation and claim it verifies LaunchDarkly's bucketing.
 
-Also test both business implementations, missing/wrong-type flags, invalid or incomplete contexts, account isolation, and safe behavior after a partial rollout. For CI integration practices, see [GitHub Actions](../workflows/github-actions.md).
+Also test both business implementations, missing/wrong-type flags, invalid or incomplete contexts, account isolation, and safe behavior after a partial rollout. For CI integration practices, see [GitHub Actions](../../ci-cd/github-actions.md).
 
 ## 10. Privacy, Access, and Change Governance
 

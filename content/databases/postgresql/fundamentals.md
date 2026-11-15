@@ -2,7 +2,7 @@
 
 Research checked: 2026-11-12
 
-New to database models? Start with [Choosing a Database](../database-types.md).
+New to database models? Start with [Choosing a Database](../concepts/database-types.md).
 Then read this guide before the [PostgreSQL SQL Lab](sql-lab.md).
 
 ## What Is PostgreSQL?
@@ -43,8 +43,8 @@ relationship between orders and books and carries the quantity.
 
 A **join** combines related rows in a query. Tables are not files an
 application should directly modify; clients send SQL to PostgreSQL. See
-[Relational Table Patterns](../relational-table-patterns.md) and
-[Foreign Keys and Indexes](../foreign-keys-and-indexes.md) for deeper examples.
+[Relational Table Patterns](../concepts/relational-table-patterns.md) and
+[Foreign Keys and Indexes](../concepts/foreign-keys-and-indexes.md) for deeper examples.
 
 ## SQL at a Glance
 

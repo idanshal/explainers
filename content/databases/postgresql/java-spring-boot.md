@@ -266,7 +266,7 @@ runtime dependencies; no Spring dependency is needed for this class.
 - Boot normally provides a pooled `DataSource`. Borrow and return connections
   promptly; size pools based on the database's total connection budget across
   instances, not just one application. See [Connection Exhaustion in Tests](../../spring-boot/testing/database-connection-exhaustion.md).
-- Manage schema changes with a migration tool such as [Flyway](../flyway.md),
+- Manage schema changes with a migration tool such as [Flyway](../migrations/flyway.md),
   and coordinate migrations with application deployment. Do not rely on
   Hibernate `create`, `create-drop`, or automatic updates for production schema
   history. The lab uses manually created tables and `validate`.
