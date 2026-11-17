@@ -1,3 +1,7 @@
+---
+level: advanced
+---
+
 # Super Type Tokens in Java
 
 A **super type token** is an object that carries a generic type description, such as `List<User>` or `Map<String, List<User>>`, into runtime code. Libraries use that description when a plain `Class<?>` cannot express the requested type.

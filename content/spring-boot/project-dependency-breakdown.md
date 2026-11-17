@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Spring Boot Dependency Breakdown
 
 This guide explains a representative Maven configuration for a Spring Boot servlet-based REST application using JPA, H2, validation, and Actuator. It describes a sample, not a particular project's dependency inventory. Keep only the dependencies your application needs.

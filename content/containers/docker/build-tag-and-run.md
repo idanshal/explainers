@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Docker Images and Containers
 
 An image packages application files and runtime configuration. A container is a running or stopped instance created from that image, with its own runtime settings and filesystem changes. Building, distributing, and operating these objects are separate steps.

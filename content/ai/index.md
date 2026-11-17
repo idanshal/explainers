@@ -31,6 +31,8 @@ The linked guides below focus on developer-facing AI systems. They are not a sur
 | 4 | [Agent Skills](skills.md) | How does reusable task guidance differ from a tool or agent? |
 | 5 | [Model Context Protocol (MCP)](mcp.md) | How do external servers expose capabilities to an AI application? |
 | 6 | [Context Optimization](context-optimization.md) | How can input and output be reduced without hiding important evidence? |
+| 7 | [OpenSpec](openspec.md) | How can an agent deliver a change from a reviewable proposal and update the system's specs? |
+| 8 | [GitHub Spec Kit](spec-kit.md) | How do project principles become a feature specification, plan, tasks, and verified implementation? |
 
 ## Start With the Problem
 
@@ -40,5 +42,6 @@ The linked guides below focus on developer-facing AI systems. They are not a sur
 - **Adding reusable specialist guidance:** Read Agent Skills before installing a skill package.
 - **Connecting documentation or a service:** Read MCP after understanding what a tool does.
 - **A session is noisy or consumes too much context:** Read Context Optimization after identifying what information the task actually needs.
+- **Requirements keep getting lost between prompting and implementation:** Compare OpenSpec and GitHub Spec Kit for a file-based, spec-driven workflow.
 
 Product examples illustrate a category; they are not interchangeable parts or endorsements. Availability depends on the installed version, selected agent environment, and organization policy.

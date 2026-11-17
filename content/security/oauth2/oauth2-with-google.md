@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # OAuth 2.0 Flow with Google
 
 Research checked: 2026-11-10

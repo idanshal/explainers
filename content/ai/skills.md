@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Agent Skills
 
 Skills supply reusable task-specific know-how to a coding agent. They are not separate agents, models, or permissions. Start with [AI Concepts](concepts.md) for the vocabulary and [Coding Agents](coding-agents.md) for the applications that use them.

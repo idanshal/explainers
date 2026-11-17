@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # SSH, Keys, and GitHub
 
 SSH (Secure Shell) is a protocol for securely connecting to another computer over a network. It encrypts the connection and can authenticate you with a password or, commonly for Git hosting, a public/private key pair. Git uses SSH as one way to authenticate when cloning, fetching, or pushing to a remote repository.

@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # jq: Query and Transform JSON
 
 Research checked: 2026-11-15

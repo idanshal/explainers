@@ -1,6 +1,18 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { createSidebar, parseCatalog } from './prepare-catalog.mjs';
+import { createSidebar, enrichCatalog, parseCatalog } from './prepare-catalog.mjs';
+
+test('enriches catalog entries and nested groups from article metadata', async () => {
+	const catalog = parseCatalog(`## Catalog
+### Java
+#### Language
+- [Streams](content/java/streams.md): Process data.
+`);
+	await enrichCatalog(catalog, async () => '---\nlevel: intermediate\n---\n# Streams\nA guide.');
+	assert.equal(catalog[0].entries[0].level, 'intermediate');
+	assert.equal(catalog[0].sections[0].entries[0].readingMinutes, 1);
+	await assert.rejects(enrichCatalog(catalog, async () => '# Streams'), /java\/streams.md: Article level/);
+});
 
 test('preserves topic entries and nested groups', () => {
 	const catalog = parseCatalog(`## Catalog

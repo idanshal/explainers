@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Flyway: Database Migrations and SQL Script Tracking
 
 Research checked: 2026-11-10

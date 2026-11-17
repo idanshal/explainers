@@ -1,6 +1,7 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { articleMetadata } from './article-metadata.mjs';
 
 const siteDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const repoDir = path.resolve(siteDir, '..');
@@ -100,9 +101,22 @@ export function createSidebar(catalog) {
 	];
 }
 
+export async function enrichCatalog(catalog, readContent) {
+	await Promise.all(catalog.flatMap((category) => category.entries.map(async (entry) => {
+		const markdown = await readContent(entry.contentPath);
+		try {
+			Object.assign(entry, articleMetadata(markdown, { overview: entry.contentPath.endsWith('/index.md') }));
+		} catch (error) {
+			throw new Error(`${entry.contentPath}: ${error.message}`, { cause: error });
+		}
+	})));
+	return catalog;
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
 	const catalogSource = await readFile(path.join(repoDir, 'README.md'), 'utf8');
 	const categories = parseCatalog(catalogSource);
+	await enrichCatalog(categories, (contentPath) => readFile(path.join(repoDir, 'content', contentPath), 'utf8'));
 	await mkdir(dataDir, { recursive: true });
 	await writeFile(path.join(dataDir, 'catalog.json'), `${JSON.stringify(categories, null, 2)}\n`);
 

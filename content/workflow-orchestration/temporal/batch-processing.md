@@ -1,3 +1,7 @@
+---
+level: advanced
+---
+
 # Batch Processing with Temporal
 
 Temporal is a durable execution system. A Workflow coordinates steps using recorded history, while Activities perform external I/O such as database reads and HTTP calls. Batch processing divides a larger workload into bounded units so failures can be retried and progress recovered without keeping every record in Workflow history. Examples use the Java SDK and an illustrative database workload.

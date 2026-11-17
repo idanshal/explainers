@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Foreign Keys and Indexes
 
 Research checked: 2026-10-11

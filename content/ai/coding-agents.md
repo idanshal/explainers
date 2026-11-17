@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Coding Agents
 
 Research checked: 2026-10-25

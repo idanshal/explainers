@@ -1,3 +1,7 @@
+---
+level: advanced
+---
+
 # Managing Multiple Data Sources in Spring Boot
 
 A `DataSource` supplies database connections. Managing multiple data sources means deciding which connection provider each operation uses, which transaction manager controls it, and how each database is initialized and monitored.

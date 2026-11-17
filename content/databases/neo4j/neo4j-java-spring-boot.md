@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Neo4j with Java and Spring Boot
 
 Research checked: 2026-11-12

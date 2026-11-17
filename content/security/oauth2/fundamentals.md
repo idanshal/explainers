@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # OAuth 2.0: Delegated API Authorization
 
 Research checked: 2026-11-10

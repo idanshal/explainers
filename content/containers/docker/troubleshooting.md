@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Docker Troubleshooting and Daily Operations
 
 Docker runs application processes in containers created from images. Failures can come from the build, the Docker engine, application configuration, network connectivity, or storage. Use this diagnostic workflow when a build fails, a container exits, a service is unreachable, or disk usage grows. Start with evidence and the smallest affected resource, not a system-wide reset.

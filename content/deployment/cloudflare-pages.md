@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Cloudflare Pages
 
 Documentation checked: 2026-11-11

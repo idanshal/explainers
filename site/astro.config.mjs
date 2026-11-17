@@ -23,6 +23,7 @@ export default defineConfig({
 			title: 'Explainers',
 			description: 'Clear mental models for software, tools, and systems.',
 			customCss: ['./src/styles/site.css'],
+			components: { PageTitle: './src/components/PageTitle.astro' },
 			sidebar,
 			social: [
 				{ icon: 'github', label: 'GitHub', href: 'https://github.com/idanshal/explainers' },

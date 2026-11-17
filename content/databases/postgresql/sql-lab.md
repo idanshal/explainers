@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # PostgreSQL and SQL: A Hands-On Lab
 
 Research checked: 2026-11-12

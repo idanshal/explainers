@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Docker Compose
 
 Docker Compose describes related services, networks, and volumes in a YAML file, then manages them as a project. A service describes a component such as an API or database; Compose creates containers from those definitions. Use it for repeatable local application stacks rather than maintaining a long collection of handwritten `docker run` commands.

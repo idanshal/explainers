@@ -1,3 +1,7 @@
+---
+level: advanced
+---
+
 # Jackson 3 Mr Bean Module
 
 This is a standalone guide to `jackson-module-mrbean` for Jackson 3.

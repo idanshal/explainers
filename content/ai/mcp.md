@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # Model Context Protocol (MCP)
 
 Research checked: 2026-10-25

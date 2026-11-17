@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Context Optimization for Coding Agents
 
 Research checked: 2026-10-25

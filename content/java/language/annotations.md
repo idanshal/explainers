@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Java Annotations: Practical Uses and Meta-Annotations
 
 ## 1. What Does `@interface` Mean?

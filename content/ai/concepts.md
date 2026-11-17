@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # AI Concepts
 
 Research checked: 2026-10-25

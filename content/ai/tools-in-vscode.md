@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Tools in VS Code
 
 Research checked: 2026-11-15

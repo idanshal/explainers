@@ -488,4 +488,236 @@ body:has(.library-home) .content-panel:has(> .sl-container > h1#_top) {
 			opacity: 1;
 		}
 	}
+
+	.opening {
+		display: block;
+		min-height: 0;
+		padding: 3.5rem clamp(0rem, 3vw, 2rem) 3rem;
+	}
+
+	.opening-copy {
+		max-width: 46rem;
+	}
+
+	.opening h1 {
+		font-size: 3.5rem;
+		line-height: 1.02;
+	}
+
+	.opening-note {
+		max-width: 40rem;
+		margin: 1rem 0 1.5rem;
+	}
+
+	.opening-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 1.5rem;
+	}
+
+	.home-search {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.7rem;
+		min-width: 15rem;
+		padding: 0.8rem 1rem;
+		border: 1px solid var(--sl-color-hairline);
+		border-radius: 4px;
+		background: var(--paper);
+		color: var(--ink);
+		font: inherit;
+		text-align: left;
+		cursor: pointer;
+	}
+
+	.home-search:hover,
+	.home-search:focus-visible {
+		border-color: var(--link-accent);
+		color: var(--link-accent);
+	}
+
+	.discovery-section,
+	.library {
+		padding: 3.5rem clamp(0rem, 3vw, 2rem);
+		border-bottom: 1px solid var(--sl-color-hairline);
+	}
+
+	.section-heading h2 {
+		font-size: 2.7rem;
+	}
+
+	.topic-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		column-gap: 2rem;
+	}
+
+	.topic-tile {
+		display: grid;
+		grid-template-columns: 1.6rem minmax(0, 1fr) auto;
+		gap: 0.5rem;
+		padding: 1rem 0;
+		border-top: 1px solid var(--sl-color-hairline);
+		color: var(--ink);
+		text-decoration: none;
+	}
+
+	.topic-tile-content,
+	.problem-link > span:first-child {
+		display: grid;
+		gap: 0.25rem;
+	}
+
+	.topic-tile-content strong {
+		font-family: 'Newsreader Variable', Georgia, serif;
+		font-size: 1.3rem;
+		font-weight: 500;
+		line-height: 1.2;
+	}
+
+	.topic-tile-content > span,
+	.problem-link > span > span {
+		color: var(--muted);
+		font-size: 0.85rem;
+		line-height: 1.45;
+	}
+
+	.topic-arrow,
+	.problem-link > span:last-child {
+		color: var(--signal);
+	}
+
+	.topic-tile:hover strong,
+	.problem-link:hover strong {
+		color: var(--signal);
+	}
+
+	.path-grid {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 2rem;
+	}
+
+	.path-item {
+		padding-top: 1rem;
+		border-top: 1px solid var(--sl-color-hairline);
+	}
+
+	.path-item h3 {
+		margin: 0.7rem 0 0.4rem;
+		font-size: 1.65rem;
+		line-height: 1.15;
+	}
+
+	.path-item p {
+		min-height: 3em;
+		margin: 0;
+		color: var(--muted);
+		font-size: 0.9rem;
+		line-height: 1.5;
+	}
+
+	.path-item ol {
+		display: grid;
+		gap: 0.6rem;
+		margin: 1.2rem 0 0;
+		padding-left: 1.3rem;
+		color: var(--signal);
+		font-family: 'IBM Plex Mono', monospace;
+		font-size: 0.75rem;
+	}
+
+	.path-item a {
+		color: var(--link-accent);
+		font-family: 'IBM Plex Sans Variable', sans-serif;
+		font-size: 0.9rem;
+		text-decoration: none;
+	}
+
+	.path-item a:hover {
+		color: var(--signal);
+		text-decoration: underline;
+	}
+
+	.problem-link {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		padding: 1rem 0;
+		border-top: 1px solid var(--sl-color-hairline);
+		color: var(--ink);
+		text-decoration: none;
+	}
+
+	.topic-row {
+		scroll-margin-top: 5rem;
+	}
+
+	.topic-links {
+		gap: 0.8rem 1.5rem;
+	}
+
+	.topic-links a {
+		display: grid;
+		gap: 0.2rem;
+		padding: 0.25rem 0;
+	}
+
+	.topic-links a strong {
+		color: var(--link-accent);
+		font-weight: 600;
+	}
+
+	.topic-links a span {
+		color: var(--muted);
+		font-size: 0.82rem;
+	}
+
+	.topic-links a:hover strong {
+		color: var(--signal);
+	}
+
+	@media (max-width: 760px) {
+		.opening {
+			padding: 2.75rem 0;
+		}
+
+		.opening h1 {
+			font-size: 2.8rem;
+		}
+
+		.discovery-section,
+		.library {
+			padding: 2.75rem 0;
+		}
+
+		.topic-grid {
+			grid-template-columns: repeat(2, minmax(0, 1fr));
+			column-gap: 1.5rem;
+		}
+
+		.path-grid {
+			grid-template-columns: 1fr;
+			gap: 1.5rem;
+		}
+
+		.path-item p {
+			min-height: 0;
+		}
+	}
+
+	@media (max-width: 460px) {
+		.opening h1 {
+			font-size: 2.4rem;
+		}
+
+		.section-heading h2 {
+			font-size: 2.25rem;
+		}
+
+		.topic-grid {
+			grid-template-columns: 1fr;
+		}
+	}
 }

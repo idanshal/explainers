@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # LaunchDarkly: Practical Feature Flags and Safe Releases
 
 Documentation checked: 2026-11-11

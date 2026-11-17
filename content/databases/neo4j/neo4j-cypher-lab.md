@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # Neo4j and Cypher: A Hands-On Lab
 
 Research checked: 2026-11-12

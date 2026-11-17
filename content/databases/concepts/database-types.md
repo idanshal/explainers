@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # Choosing a Database: From Tables to Graphs
 
 Research checked: 2026-11-12

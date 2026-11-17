@@ -1,10 +1,14 @@
+---
+level: advanced
+---
+
 # Why Spring Boot Tests Run Out of Database Connections
 
 Spring Boot integration tests can pass individually but fail as a suite with a database error such as PostgreSQL's **"too many connections."**
 
 One common cause is **too many connection pools, too much capacity per pool, or both**. Different test configurations can create separate Spring application contexts, each normally with its own pool. Their combined connections can exceed the database's limit.
 
-## What's happening
+## What's Happening
 
 An **application context** is the collection of Spring beans created for a particular configuration. When that configuration includes a database, those beans normally include a `DataSource` backed by a **connection pool**. The pool keeps database connections open so the application can reuse them.
 
@@ -18,7 +22,7 @@ Test class C -> Spring context C -> HikariCP pool C --+
 
 **One database container does not mean one connection pool.** Each pool has its own connection budget, but they all count toward the same database limit.
 
-### The connection math
+### The Connection Math
 
 For pools connected to the same database server, the potential connection demand is:
 
@@ -36,7 +40,7 @@ The maximum is a ceiling, not a promise that a pool opens all its connections im
 Reducing pool capacity can lower connection demand, but it does not reduce the number of pools. Reusing an application context avoids creating another pool in the first place.
 
 
-## Why multiple test classes can create multiple pools
+## Why Multiple Test Classes Can Create Multiple Pools
 
 Spring caches application contexts so that test classes with matching configurations can reuse them. Finishing a test class does not normally close its cached context, so its pool can stay open while other test classes run. **Tests do not have to run in parallel for several pools to remain alive.**
 
@@ -59,15 +63,15 @@ Configuration differences that can require separate contexts include:
 
 Separate test JVMs also have separate context caches. Even identical test configurations cannot share a context across those processes.
 
-## How to fix it
+## How to Fix It
 
-### 1. Confirm what is consuming connections
+### 1. Confirm What Is Consuming Connections
 
 Before changing the test structure, count the live application contexts, connection pools, and test JVMs that use the database. Compare their pool capacities with the database's available connections.
 
 Check whether connections are idle in pools or remain checked out after tests finish. The first can indicate excess pool capacity; the second can indicate unclosed connections or unfinished transactions. Use the queries and logs described in [How to confirm the diagnosis](#how-to-confirm-the-diagnosis).
 
-### 2. Use a pool size that fits your tests
+### 2. Use a Pool Size That Fits Your Tests
 
 Choose `spring.datasource.hikari.maximum-pool-size` based on how many connections a test needs simultaneously and how many pools can be alive together. Use `minimum-idle` to control how many idle connections each pool tries to keep ready.
 
@@ -75,11 +79,11 @@ A smaller pool is a valid test configuration when it supports the workload. It i
 
 Put test-specific settings in test configuration, not production configuration. If you use `src/test/resources/application-test.yml`, activate the `test` profile, for example with `@ActiveProfiles("test")`.
 
-### 3. Remove unnecessary configuration differences
+### 3. Remove Unnecessary Configuration Differences
 
 When tests genuinely need the same setup, align their profiles, properties, imports, and mock definitions so Spring can reuse a context. **Matching configuration enables reuse; a shared parent class is not required.**
 
-#### Start with annotations directly on each test class
+#### Start with Annotations Directly on Each Test Class
 
 "Explicit annotations" simply means writing the setup on each test class, rather than inheriting it from a base class. These independent classes each request the full Spring Boot application and activate the same test profile:
 
@@ -97,7 +101,7 @@ class CustomerIntegrationTest {
 
 They can reuse a cached context if their remaining configuration matches. Different properties, imports, or mock definitions can still require separate contexts. Repeating two annotations is often clearer than introducing a base class only to hold them.
 
-#### Import a configuration when tests need the same extra beans
+#### Import a Configuration When Tests Need the Same Extra Beans
 
 Annotations such as `@SpringBootTest` select the test setup. A **test configuration** defines additional Spring-managed objects, or beans, that the test needs. `@Import` tells Spring to include those bean definitions in the test's application context.
 
@@ -143,13 +147,13 @@ class CustomerIntegrationTest {
 
 The clock is only an illustration. The same pattern works for other test-specific beans; container examples are in the [Testcontainers explainer](shared-postgres-testcontainers.md).
 
-#### Add an abstraction only when it helps
+#### Add an Abstraction Only When It Helps
 
 If the same annotation combination appears in many tests, a composed annotation such as `@PostgresIntegrationTest` can bundle it. This is optional configuration reuse, not a requirement for caching. Likewise, keep shared beans in focused imported configurations rather than putting every test dependency into a large superclass.
 
 Inheritance can suit a genuine shared testing contract, but it can also hide configuration, lifecycle methods, and mutable state. Do not introduce it merely to reuse annotations. Do not force unrelated tests into the same setup either: the goal is to remove unnecessary differences, not all differences.
 
-### 4. Review context restarts and parallelism
+### 4. Review Context Restarts and Parallelism
 
 `@DirtiesContext` tells Spring to remove and close a cached context. A later test that needs it must build another one, including a new pool.
 
@@ -157,7 +161,7 @@ Closing the context normally closes its pool, so `@DirtiesContext` does not simp
 
 Also check parallel test execution and forked test JVMs: each additional process can add its own pools to the same database.
 
-### 5. Treat container sharing as a separate decision
+### 5. Treat Container Sharing as a Separate Decision
 
 Container sharing controls database startup and lifecycle. Context reuse and pool sizing control how many connections the application opens.
 
@@ -168,7 +172,7 @@ Container sharing controls database startup and lifecycle. Context reuse and poo
 
 See [Sharing PostgreSQL Testcontainers in Spring Boot Tests](shared-postgres-testcontainers.md) for lifecycle patterns and configuration examples.
 
-## Worked example: several pools targeting one PostgreSQL container
+## Worked Example: Several Pools Targeting One PostgreSQL Container
 
 Consider a suite like the reported case: the tests use PostgreSQL in Testcontainers, and reducing the maximum pool size appears to resolve a "too many connections" failure.
 
@@ -202,7 +206,7 @@ spring:
 
 If equivalent tests can share one context, they can also share its pool. If the contexts genuinely need to differ, keep them separate and size their pools within the shared connection budget.
 
-## How to confirm the diagnosis
+## How to Confirm the Diagnosis
 
 While the suite is running, check PostgreSQL's configured limit and the connections to the test database:
 

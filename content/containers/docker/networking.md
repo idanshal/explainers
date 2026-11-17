@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Docker Networking
 
 Docker networking provides connectivity between isolated container processes, other containers, and external callers. A container normally has its own network namespace, so its loopback address is separate from the host's. Choosing the right destination address and deciding whether to publish a port are different tasks.

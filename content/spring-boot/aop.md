@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # AOP and Spring AOP: Timing and Retry Annotations
 
 Aspect-oriented programming (AOP) separates **what an operation does** from **behavior shared by many operations**, such as logging, timing, security checks, transactions, and retries.

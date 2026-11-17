@@ -1,3 +1,7 @@
+---
+level: foundations
+---
+
 # Graph Database Fundamentals
 
 Research checked: 2026-11-12

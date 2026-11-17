@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Java Streams: Transforming, Flattening, and Collecting Data
 
 Streams describe a computation over a sequence of elements: select the elements you need, transform them, and produce a result. They are useful when that pipeline communicates the intent more clearly than a loop.

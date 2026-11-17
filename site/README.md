@@ -21,6 +21,8 @@ General concepts should be vendor-independent where practical. Named product, la
 
 The website reads its Markdown directly from the sibling `content/` directory using Astro's filesystem content loader. The articles are the canonical source; builds do not copy, rewrite, or generate files in `content/`. Writers use a level-one heading for each title and ordinary relative `.md` links. The site adapter supplies Starlight's page metadata and routes at render time. The root `README.md` catalog drives the homepage and sidebar.
 
+Each cataloged explainer has a `level` in its Markdown frontmatter: `foundations` introduces the subject, `intermediate` assumes working familiarity, and `advanced` assumes substantial subject knowledge. Topic overview `index.md` pages may omit the level. The catalog preparation step reads these values from the articles and estimates reading time from prose at 200 words per minute and fenced code at 100 tokens per minute, excluding References and Further Reading sections. The estimate is for reading, not completing exercises. Restart the dev server after changing article metadata so the generated catalog is refreshed.
+
 ## Local Development
 
 ```sh

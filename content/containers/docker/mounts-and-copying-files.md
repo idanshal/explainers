@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Docker Storage
 
 Containers have their own filesystem view. Files written into a container's writable layer remain across stop/start but disappear when that container is removed. Mounts make external storage available at a container path so that data can have a different lifecycle.

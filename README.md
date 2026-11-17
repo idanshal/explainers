@@ -21,6 +21,11 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 - [Agent Skills](content/ai/skills.md): Reusable task guidance, compatibility checks, and the UI UX Pro Max example.
 
+#### Spec-Driven Development
+
+- [OpenSpec](content/ai/openspec.md): Change proposals, delta specifications, implementation, and archiving, with a CSV export example.
+- [GitHub Spec Kit](content/ai/spec-kit.md): Project principles, feature specifications, plans, tasks, and convergence, with a CSV export example.
+
 #### Integrations and Context
 
 - [Model Context Protocol (MCP)](content/ai/mcp.md): Hosts, clients, servers, exposed capabilities, and documentation integrations.
@@ -88,11 +93,19 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 #### Maven
 
+- [Maven: From Java Source to a Running Application](content/build-tools/maven/index.md): Build and run Java with and without Maven, understand POMs and dependencies, then connect the build to Spring Boot. <!-- sidebar: {"label":"Overview","order":0} -->
+- [Maven Wrapper](content/build-tools/maven/wrapper.md): Pin Maven per project, generate and use the launcher scripts, and keep local and CI builds aligned.
 - [Maven Plugins](content/build-tools/maven/plugins.md): Common build plugins and the role each plays.
 
 ### Command-Line Tools
 
+- [Homebrew: A Practical Guide](content/command-line-tools/homebrew.md): Install and maintain command-line tools and desktop apps with Homebrew.
 - [jq: Query and Transform JSON](content/command-line-tools/jq.md): Essential filters, safe shell arguments, grouping, aggregation, and a worked order-summary example.
+- [Pandoc: Convert Documents from the Command Line](content/command-line-tools/pandoc.md): Convert Markdown, HTML, Word documents, and PDFs with Pandoc.
+
+### Web Development
+
+- [Chrome DevTools: A Developer's Field Guide](content/web-development/chrome-devtools.md): Inspect pages, debug JavaScript and network requests, test responsive behavior, and profile performance.
 
 ### Deployment
 
@@ -123,7 +136,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 #### OAuth 2.0
 
-- [OAuth 2.0: Delegated API Authorization](content/security/oauth2/fundamentals.md): Start here for the industry standard, delegation model, authorization code flow, PKCE, and the distinction from OpenID Connect.
+- [OAuth 2.0: Delegated API Authorization](content/security/oauth2/fundamentals.md): Start here for the industry standard, delegation model, authorization code flow, PKCE, and the distinction from OpenID Connect. <!-- sidebar: {"label":"Overview","order":0} -->
 - [OAuth 2.0 Flow with Azure (Microsoft Entra ID)](content/security/oauth2/oauth2-with-azure.md): Authorization code flow with PKCE, sign-in versus authorization, token roles, and a Microsoft Graph example.
 - [OAuth 2.0 Flow with Google](content/security/oauth2/oauth2-with-google.md): OIDC sign-in, Calendar API access, PKCE, consent, refresh tokens, and differences from Microsoft Entra ID.
 
@@ -153,7 +166,9 @@ After GitHub Pages is enabled and the first deployment succeeds, browse the publ
 - Include versions in filenames only when they materially define the subject. State other version applicability in the article.
 - Avoid date and numeric prefixes unless an article is part of an explicitly ordered series.
 - Keep `content/` portable Markdown: use H1 titles, relative `.md` links, and standard Markdown without site-specific frontmatter, components, or routes. Keep presentation and deployment code in `site/`.
+- Use title case for article headings, preserving the spelling of code and product names.
 - Keep folders shallow. Add subfolders when a real topic cluster emerges and `index.md` pages when a section becomes difficult to scan.
 - Add every new explainer to this catalog with a relative link and a short description.
+- Catalog and sidebar labels may be shorter than an article's H1, but should clearly identify the same subject.
 - Keep supporting assets beside their article. If an article needs several supporting files, use a topic folder containing `README.md`, `assets/`, and `examples/` as needed.
 - Identify the project in project-specific walkthroughs. If several such articles accumulate, group them under `case-studies/<project>/`.

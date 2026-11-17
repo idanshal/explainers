@@ -1,8 +1,12 @@
+---
+level: intermediate
+---
+
 # Maven Plugins
 
 Maven plugins perform build tasks such as compiling code, packaging an application, or producing extra artifacts. They run during Maven commands; they are not normally libraries used by the application at runtime.
 
-This page is a standalone guide to the plugins and annotation processors explained below; no other document is needed for context.
+New to Maven? Start with [Maven: From Java Source to a Running Application](index.md) for a plain-Java walkthrough, a Maven build of the same application, and the connection to Spring Boot. This page focuses on the plugins and annotation processors used in those builds.
 
 ## At a Glance
 

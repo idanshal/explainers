@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Dockerfiles and Image Builds
 
 A **Dockerfile** is a recipe for building a container image. It selects a base filesystem, adds the application and its dependencies, and declares defaults for running it. It is not a script that runs from top to bottom every time a container starts.

@@ -1,0 +1,22 @@
+---
+import ArticleMetadata from './ArticleMetadata.astro';
+import catalog from '../data/catalog.json';
+
+const route = `/${Astro.locals.starlightRoute.entry.id}/`;
+const entry = catalog.flatMap((category) => category.entries).find((item) => item.route === route);
+---
+
+<h1 id="_top">{Astro.locals.starlightRoute.entry.data.title}</h1>
+{entry && <ArticleMetadata level={entry.level} readingMinutes={entry.readingMinutes} />}
+
+<style>
+        @layer starlight.core {
+                h1 {
+                        margin-top: 1rem;
+                        font-size: var(--sl-text-h1);
+                        line-height: var(--sl-line-height-headings);
+                        font-weight: 600;
+                        color: var(--sl-color-white);
+                }
+        }
+</style>

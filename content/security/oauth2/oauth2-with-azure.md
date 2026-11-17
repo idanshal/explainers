@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # OAuth 2.0 Flow with Azure (Microsoft Entra ID)
 
 OAuth 2.0 lets an application access an API with permission, without receiving the user's password. Microsoft Entra ID, formerly Azure Active Directory (Azure AD), implements OAuth 2.0 through the Microsoft identity platform.

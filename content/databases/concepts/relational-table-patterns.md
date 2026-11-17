@@ -1,10 +1,14 @@
+---
+level: foundations
+---
+
 # Common Relational Table Patterns
 
 Research checked: 2026-10-11
 
 These names describe common **design roles** for tables. They are not formal table types defined by SQL. A relational database enforces structure through keys and constraints, such as primary keys, foreign keys, `UNIQUE`, and `NOT NULL`.
 
-## 1. Entity table
+## 1. Entity Table
 
 An entity table stores rows for a business object with its own identity. It typically has a primary key.
 
@@ -18,7 +22,7 @@ An entity table stores rows for a business object with its own identity. It typi
 
 An entity can participate in other patterns too. For example, a user is an entity and may be the parent in a one-to-many relationship with orders.
 
-## 2. Detail or extension table
+## 2. Detail or Extension Table
 
 A detail table holds attributes associated closely with a parent row. A common design is a one-to-one relationship, enforced by making the foreign key unique (or using it as the detail table's primary key).
 
@@ -33,7 +37,7 @@ A detail table holds attributes associated closely with a parent row. A common d
 
 Splitting fields out can help when they have a different lifecycle, access policy, or usage pattern. It is not automatically better just because fields are optional or large: a separate table also adds joins and complexity.
 
-## 3. Lookup or reference table
+## 3. Lookup or Reference Table
 
 A reference table stores reusable values that other rows refer to with a foreign key.
 
@@ -46,7 +50,7 @@ A reference table stores reusable values that other rows refer to with a foreign
 
 A `users.department_id` foreign key can reference `departments.id`. Reference tables are often used for categories, statuses, and types. If a supposed lookup value has its own substantial data and lifecycle, model it as a regular domain entity instead; the label depends on its role, not its size.
 
-## 4. Child or dependent table
+## 4. Child or Dependent Table
 
 A child table stores rows associated with a parent, typically in a one-to-many relationship. The foreign key is on the many side.
 
@@ -60,7 +64,7 @@ A child table stores rows associated with a parent, typically in a one-to-many r
 
 One user can have many orders. An order can still be an entity with its own identity; “child” describes its relationship to the user, not whether the order is independently identifiable.
 
-## 5. Association or join table
+## 5. Association or Join Table
 
 An association table represents a many-to-many relationship using foreign keys to both related tables.
 
@@ -73,7 +77,7 @@ An association table represents a many-to-many relationship using foreign keys t
 
 A primary key on (`user_id`, `role_id`) prevents the same role from being assigned to the same user more than once. A separate surrogate key can be used instead, with a `UNIQUE` constraint on the pair.
 
-## 6. Value-object or embedded data
+## 6. Value-Object or Embedded Data
 
 A value object is meaningful as part of its owner and normally has no independent identity. It does not have to be stored in a separate table.
 
@@ -87,7 +91,7 @@ A value object is meaningful as part of its owner and normally has no independen
 
 These columns could live on `users`. In an ORM such as Hibernate, an embeddable value object's fields can map to columns in the owning entity's table. A separate table is also possible when the relationship or data shape calls for it; a separate table alone does not make the value an independent entity.
 
-## 7. Audit or history table
+## 7. Audit or History Table
 
 An audit table records changes to data over time, often including who made a change and when.
 
@@ -104,7 +108,7 @@ An audit table records changes to data over time, often including who made a cha
 
 Audit designs vary: they may store field-level differences, full snapshots, or structured change records. Whether the records are append-only, how long they are retained, and how they relate to deleted users are separate design decisions.
 
-## 8. Event or log table
+## 8. Event or Log Table
 
 An event table records occurrences or actions, such as a login attempt. Operational logs may capture runtime details; business-event records capture domain-relevant facts.
 
@@ -120,7 +124,7 @@ An event table records occurrences or actions, such as a login attempt. Operatio
 
 Event records are often append-oriented, but “append-only” is a design or operational policy, not an automatic property of a table. Events and audits can overlap, but they answer different questions: what happened versus what data changed and by whom.
 
-## 9. Bridge or mapping table
+## 9. Bridge or Mapping Table
 
 A bridge table is another name for an association table. When the relationship itself has attributes, it is often useful to think of it as an **associative entity**. This is not a completely separate category from join tables; the terms overlap.
 
@@ -135,7 +139,7 @@ A bridge table is another name for an association table. When the relationship i
 
 The student-course pair identifies the relationship, while `enrolled_at` and `grade` describe it. A composite primary key or a separate enrollment ID can identify each enrollment, depending on the domain and constraints.
 
-## Quick guide
+## Quick Guide
 
 - A main business object with its own identity: **entity**
 - Extra attributes closely owned by one object: **detail or extension**

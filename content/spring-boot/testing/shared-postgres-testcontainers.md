@@ -1,10 +1,14 @@
+---
+level: advanced
+---
+
 # Sharing PostgreSQL Testcontainers in Spring Boot Tests
 
 Testcontainers can manage a PostgreSQL container per test method, per test class, or for the lifetime of a Spring application context. Those choices affect startup time and test isolation. They are separate from how Spring Boot learns the database connection details.
 
 This guide covers the JUnit Jupiter extension and Spring Boot's test integration. The examples use PostgreSQL; other services use their own Testcontainers module and may have different Spring connection support.
 
-## First: Which annotations belong together?
+## First: Which Annotations Belong Together?
 
 The annotations depend on who owns the container lifecycle:
 
@@ -17,7 +21,7 @@ The annotations depend on who owns the container lifecycle:
 
 `@Container` is not a general-purpose annotation that starts a container by itself. With JUnit Jupiter it is discovered by `@Testcontainers`. For Spring Boot's imported-declaration approach, it marks fields in the imported declaration type. Spring bean methods use `@Bean` instead.
 
-## JUnit Jupiter: static versus instance fields
+## JUnit Jupiter: Static Versus Instance Fields
 
 With `org.testcontainers:junit-jupiter` in Testcontainers 1.x, or `org.testcontainers:testcontainers-junit-jupiter` in 2.x, the extension uses the field's static-ness to decide its lifecycle:
 
@@ -47,13 +51,13 @@ class IsolatedPostgresTest {
 
 The instance form gives each method a fresh container, but is usually much slower. The static form shares a database server across methods in one class, so tests must account for data left by earlier methods.
 
-### A Spring context lifecycle trap
+### A Spring Context Lifecycle Trap
 
 JUnit's static field is class-scoped, not automatically shared across the whole test suite. Spring's test context cache can keep an `ApplicationContext` alive after a test class finishes. If that context holds a datasource pointing at the class's stopped container, a later class can reuse the context and fail when it tries to connect.
 
 For Spring Boot integration tests, prefer a container whose lifecycle follows the cached Spring context. A static `@Container` field is still useful for plain JUnit tests, or when the context/container lifetime is deliberately managed to match.
 
-## Spring-managed containers
+## Spring-Managed Containers
 
 Spring Boot can start a container declared as a bean and stop it when the application context closes. Tests that reuse that context can reuse its container as well. If tests create distinct contexts, each context can have its own container. The factory method may be `static`; it is still an ordinary Spring bean with a context-scoped lifecycle. `static` does not make it a suite-wide singleton.
 
@@ -95,7 +99,7 @@ DynamicPropertyRegistrar postgresProperties(PostgreSQLContainer<?> postgres) {
 
 `DynamicPropertyRegistrar` is available in Spring Framework 6.2 and later. This registrar is itself a Spring bean, so regular `@Import` loads it as part of the configuration.
 
-## Import a reusable container declaration
+## Import a Reusable Container Declaration
 
 Spring Boot's `@ImportTestcontainers` is convenient when you want to keep container declarations in a separate class or interface and import them into test configuration. The declaration can be shared by multiple test configurations without making each test class repeat the container setup.
 
@@ -127,13 +131,13 @@ The imported declarations are managed as part of Spring's test configuration, so
 
 `@ImportTestcontainers` is part of Spring Boot's `spring-boot-testcontainers` integration and has been available since Spring Boot 3.1.0. It imports static Testcontainers fields and `@DynamicPropertySource` methods from the declaration type into the Spring `ApplicationContext`. This is the convenience when you want to reuse field-and-method declarations without converting them into `@Bean` methods or a `DynamicPropertyRegistrar` bean. Regular `@Import` does not perform that Testcontainers-specific discovery. If you already have `@Bean` methods or a registrar, regular `@Import` is sufficient.
 
-## What `@ServiceConnection` does
+## What `@ServiceConnection` Does
 
 `@ServiceConnection` tells Spring Boot to derive service connection details from a Testcontainers container. For a typed PostgreSQL container, Boot's Testcontainers integration creates connection-details beans, such as `JdbcConnectionDetails`, which its datasource auto-configuration consumes. The container's mapped host and port are discovered for you.
 
 It does **not** start the container on its own, make containers shared, or merge datasource pools. The lifecycle still comes from the chosen mechanism: Spring bean/import configuration or the JUnit extension.
 
-### With and without `@ServiceConnection`
+### With and Without `@ServiceConnection`
 
 With `@ServiceConnection`, the test can omit manual datasource URL, username, and password wiring:
 
@@ -165,7 +169,7 @@ For a Spring-managed typed `PostgreSQLContainer`, `@ServiceConnection` can be pl
 
 Image-name hints work only with factories that support name-based matching. For example, a `GenericContainer` bean running Redis can use `@ServiceConnection(name = "redis")` with Boot's Redis connection factory. The hint is not a universal substitute for a typed container.
 
-## `withReuse(true)` is different
+## `withReuse(true)` Is Different
 
 Testcontainers reusable containers are an experimental, explicit opt-in feature intended primarily for local development. They can stay running after the test process and be reused by a later run when the container configuration matches.
 
@@ -186,7 +190,7 @@ postgres.start();
 
 This is not equivalent to a static field. A static field shares a normally managed container across test methods in one class; reuse can keep a matching container alive across test runs. Do not combine reusable-container mode with JUnit-managed `@Container` cleanup: reuse requires explicit lifecycle control and the container must not be stopped by the extension or application code. Testcontainers also advises against relying on reuse in CI.
 
-## Maven dependencies for PostgreSQL
+## Maven Dependencies for PostgreSQL
 
 You need the PostgreSQL Testcontainers module and the PostgreSQL JDBC driver. Add the JUnit integration if using `@Testcontainers` and `@Container`. Add Spring Boot's Testcontainers module if using `@ServiceConnection` or `@ImportTestcontainers`.
 
@@ -231,7 +235,7 @@ Use the Spring Boot parent or BOM to manage compatible Spring and Testcontainers
 
 Projects can override dependency management, so check the resolved versions rather than assuming a Spring Boot major version guarantees a particular Testcontainers major version. The PostgreSQL JDBC driver is a separate dependency; the Testcontainers PostgreSQL module does not supply it.
 
-## Quick choice
+## Quick Choice
 
 - Plain JUnit Jupiter tests: `@Testcontainers` plus a static `@Container` for one container per class.
 - Spring Boot integration tests: prefer a Spring-managed container bean or `@ImportTestcontainers` so its lifetime matches the cached context. Use regular `@Import` for a configuration that already declares beans or a `DynamicPropertyRegistrar`.

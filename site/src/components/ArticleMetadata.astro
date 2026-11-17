@@ -1,0 +1,52 @@
+---
+import { Clock } from '@lucide/astro';
+
+const { level, readingMinutes, compact = false } = Astro.props;
+const labels = { foundations: 'Foundations', intermediate: 'Intermediate', advanced: 'Advanced' };
+const steps = { foundations: 1, intermediate: 2, advanced: 3 };
+---
+
+<div class:list={['article-meta', { compact }]}>
+        {level && <span class="level">
+                <span class="level-mark" aria-hidden="true">
+                        {[1, 2, 3].map((step) => <span class:list={['level-step', { active: step <= steps[level] }]}></span>)}
+                </span>
+                <span>{labels[level]}</span>
+        </span>}
+        <span class="reading-time"><Clock size={14} strokeWidth={1.7} aria-hidden="true" /> ~{readingMinutes} min read</span>
+</div>
+
+<style>
+        .article-meta {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 0.6rem 1.2rem;
+                margin-top: 0.8rem;
+                color: var(--muted);
+                font-family: var(--sl-font);
+                font-size: 0.85rem;
+                line-height: 1.4;
+        }
+        .article-meta.compact {
+                gap: 0.4rem 0.9rem;
+                margin-top: 0.35rem;
+                font-size: 0.75rem;
+        }
+        .level, .reading-time, .level-mark {
+                display: inline-flex;
+                align-items: center;
+        }
+        .level, .reading-time { gap: 0.4rem; }
+        .level { color: var(--link-accent); font-weight: 600; }
+        .level-mark { gap: 2px; }
+        .level-step {
+                width: 4px;
+                height: 11px;
+                border-radius: 1px;
+                background: var(--sl-color-hairline);
+        }
+        .level-step.active { background: var(--signal); }
+        .level-step:nth-child(1) { height: 5px; }
+        .level-step:nth-child(2) { height: 8px; }
+</style>

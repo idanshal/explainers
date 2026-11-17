@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # Temporal Schedules
 
 A Temporal Schedule is a server-managed definition for starting Workflow executions at specified times. A Workflow is the durable orchestration instance it starts; Activities are the external operations that Workflow coordinates. Schedule timing, overlap handling, and missed-start policy are distinct from retrying a failed Activity.

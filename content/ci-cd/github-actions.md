@@ -1,3 +1,7 @@
+---
+level: intermediate
+---
+
 # GitHub Actions: Practical CI and Automation
 
 Documentation checked: 2026-11-11
