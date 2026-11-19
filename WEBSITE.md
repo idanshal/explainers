@@ -1,6 +1,6 @@
 # Explainers Website
 
-The active website is built from the canonical Markdown articles in `content/` by the Astro project in `site/`. Each article uses a subject-based H1; the site supplies browser metadata without requiring frontmatter. The root README catalog drives the homepage and navigation. See [site authoring and navigation rules](site/README.md) for optional sidebar metadata and standalone article standards. Older files in `src/content/docs/` are not used by this site.
+The website is built from the Markdown articles in `content/` by the Astro project in `site/`. Each article uses a subject-based H1; the site supplies browser metadata without requiring frontmatter. The root README catalog drives the homepage and navigation. See [site authoring and navigation rules](site/README.md) for optional sidebar metadata and standalone article standards.
 
 ## Local Development
 

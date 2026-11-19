@@ -98,6 +98,10 @@ Practical explanations of software concepts, tools, and common problems, organiz
 - [Maven Wrapper](content/build-tools/maven/wrapper.md): Pin Maven per project, generate and use the launcher scripts, and keep local and CI builds aligned.
 - [Maven Plugins](content/build-tools/maven/plugins.md): Common build plugins and the role each plays.
 
+#### npm
+
+- [npm: Packages, Dependencies, and Scripts](content/build-tools/npm/index.md): Understand npm and Node.js, add dependencies, use package scripts, and install from a lockfile. <!-- sidebar: {"label":"Overview","order":0} -->
+
 ### Command-Line Tools
 
 - [Homebrew: A Practical Guide](content/command-line-tools/homebrew.md): Install and maintain command-line tools and desktop apps with Homebrew.
@@ -122,7 +126,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 
 #### Docker
 
-- [Docker: A Developer Guide](content/containers/docker/index.md): Containers, images, architecture, a first local service, and the learning path. <!-- sidebar: {"label":"Overview","order":0} -->
+- [Docker](content/containers/docker/index.md): Containers, images, architecture, a first local service, and the learning path. <!-- sidebar: {"label":"Overview","order":0} -->
 - [Dockerfiles and Image Builds](content/containers/docker/dockerfiles-and-multi-stage-builds.md): Build contexts, instructions, caching, multi-stage builds, users, and build secrets.
 - [Docker Images and Containers](content/containers/docker/build-tag-and-run.md): Build, tag, publish, run, inspect, and manage application containers.
 - [Docker Storage](content/containers/docker/mounts-and-copying-files.md): Bind mounts, named volumes, permissions, persistence, and copying files.

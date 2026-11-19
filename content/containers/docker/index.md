@@ -3,11 +3,11 @@ technologies:
     - Docker
 ---
 
-# Docker: A Developer Guide
+# Docker
 
-Docker packages an application and its runtime dependencies into an **image**, then runs that image as one or more **containers**. As a developer, you use it to run dependencies locally, build reproducible application environments, and deliver the same application artifact to other machines.
+Docker packages an application and its runtime dependencies into an **image**, then creates one or more **containers** from that image. These explainers cover the core objects and workflows behind running local dependencies, building repeatable application environments, and moving the same application artifact between machines.
 
-This section targets Linux containers with a local Docker Engine or Docker Desktop and a macOS/Linux-style shell. Examples that publish ports bind them to loopback unless wider exposure is explicitly needed. Production orchestration is outside the scope of this developer guide.
+The examples target Linux containers with a local Docker Engine or Docker Desktop and a macOS/Linux-style shell. Published ports bind to loopback unless wider exposure is explicitly needed. Production orchestration is outside this overview's scope.
 
 ## The Core Model
 

@@ -17,7 +17,7 @@ Overview pages should explain their subjects, not just repeat the sidebar. Filen
 
 Use subject-based titles, not suffixes such as "Explainers." Each article should define its topic, state important prerequisites and version assumptions, and provide the setup needed for its examples or explicitly identify them as illustrative fragments. Explain essential terms locally rather than making a previous article mandatory. Related links can provide deeper reading without replacing necessary context.
 
-General concepts should be vendor-independent where practical. Named product, language, and platform guides should retain their actual scope and distinguish general principles from product-specific behavior. Keep repository organization and publishing instructions in author documentation, not in technical articles. The canonical articles live in `content/`; older files under `src/content/docs/` are not the active site's source.
+General concepts should be vendor-independent where practical. Named product, language, and platform guides should retain their actual scope and distinguish general principles from product-specific behavior. Keep repository organization and publishing instructions in author documentation, not in technical articles. The canonical articles live in `content/`.
 
 The website reads its Markdown directly from the sibling `content/` directory using Astro's filesystem content loader. The articles are the canonical source; builds do not copy, rewrite, or generate files in `content/`. Writers use a level-one heading for each title and ordinary relative `.md` links. The site adapter supplies Starlight's page metadata and routes at render time. The root `README.md` catalog drives the homepage and sidebar.
 

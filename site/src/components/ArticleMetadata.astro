@@ -1,5 +1,5 @@
 ---
-import { Clock } from '@lucide/astro';
+import { Braces, Clock, KeyRound, PackageOpen, ToggleRight } from '@lucide/astro';
 import {
         siApachemaven,
         siCloudflare,
@@ -15,6 +15,7 @@ import {
         siHomebrew,
         siModelcontextprotocol,
         siNeo4j,
+        siNginx,
         siOpenjdk,
         siPandoc,
         siPostgresql,
@@ -26,6 +27,13 @@ import {
 const { level, readingMinutes, technologies = [], compact = false } = Astro.props;
 const labels = { foundations: 'Foundations', intermediate: 'Intermediate', advanced: 'Advanced' };
 const steps = { foundations: 1, intermediate: 2, advanced: 3 };
+const javaIconUrl = `${import.meta.env.BASE_URL.replace(/\/$/, '')}/icons/java.svg`;
+const genericTechnologyIcons = {
+        'Agent Package Manager': PackageOpen,
+        'LaunchDarkly': ToggleRight,
+        'Microsoft Entra ID': KeyRound,
+        jq: Braces,
+};
 const technologyIcons = {
         'Apache Maven': siApachemaven,
         'Cloudflare Pages': siCloudflare,
@@ -41,6 +49,7 @@ const technologyIcons = {
         Homebrew: siHomebrew,
         'Model Context Protocol': siModelcontextprotocol,
         Neo4j: siNeo4j,
+        NGINX: siNginx,
         OpenJDK: siOpenjdk,
         Pandoc: siPandoc,
         PostgreSQL: siPostgresql,
@@ -63,10 +72,13 @@ const technologyIcons = {
 {!compact && technologies.length > 0 && <ul class="technology-list" aria-label="Technologies">
         {technologies.map((technology) => {
                 const icon = technologyIcons[technology];
+                const GenericIcon = genericTechnologyIcons[technology];
                 return <li>
                         {technology === 'Java'
-                                ? <img src={`${import.meta.env.BASE_URL}icons/java.svg`} alt="" aria-hidden="true" />
-                                : icon && <svg viewBox="0 0 24 24" style={`--technology-icon-color: #${icon.hex}`} aria-hidden="true"><path fill="currentColor" d={icon.path} /></svg>}
+                                ? <img src={javaIconUrl} alt="" aria-hidden="true" />
+                                : icon
+                                        ? <svg viewBox="0 0 24 24" style={`--technology-icon-color: #${icon.hex}`} aria-hidden="true"><path fill="currentColor" d={icon.path} /></svg>
+                                        : GenericIcon && <GenericIcon size={18} strokeWidth={1.7} aria-hidden="true" />}
                         <span>{technology}</span>
                 </li>;
         })}

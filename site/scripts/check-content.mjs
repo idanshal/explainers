@@ -54,7 +54,6 @@ await checkLinks(path.join(repoDir, 'README.md'), 'README.md', repoDir);
 await checkLinks(path.join(repoDir, 'WEBSITE.md'), 'WEBSITE.md', repoDir);
 await checkLinks(path.join(siteDir, 'README.md'), 'site/README.md', repoDir);
 await checkDirectory(contentDir);
-await checkDirectory(path.join(repoDir, 'src/content/docs'), 'src/content/docs', repoDir);
 
 if (brokenLinks.length) {
 	console.error(`Found ${brokenLinks.length} broken local Markdown links:`);
