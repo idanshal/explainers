@@ -4,7 +4,7 @@ level: foundations
 
 # Choosing a Database: From Tables to Graphs
 
-Research checked: 2026-11-12
+Updated Nov 12, 2026
 
 A database model determines how information is represented and which queries are natural to express. Choose a model by the application's access patterns, consistency requirements, and operational constraints; a product's popularity is not a substitute for that fit.
 

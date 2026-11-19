@@ -1,10 +1,14 @@
 ---
 level: intermediate
+technologies:
+    - Neo4j
+    - Spring Boot
+    - Java
 ---
 
 # Neo4j with Java and Spring Boot
 
-Research checked: 2026-11-12
+Updated Nov 12, 2026
 
 Neo4j stores nodes and relationships in a graph. Java applications connect through a driver or Spring Data Neo4j to execute Cypher queries and map graph data to objects. This example exposes a small people-and-follows graph through a Spring Boot application; the required database setup is included below.
 The examples were checked with Spring Boot 3.5.7, Java 25, and Neo4j 2026.10.2;

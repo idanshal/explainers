@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+        - Java
 ---
 
 # Java Streams: Transforming, Flattening, and Collecting Data

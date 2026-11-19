@@ -1,5 +1,8 @@
 ---
 level: intermediate
+technologies:
+  - Spring Boot
+  - Java
 ---
 
 # Spring Boot Dependency Breakdown

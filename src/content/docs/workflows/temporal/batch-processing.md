@@ -6,7 +6,7 @@ title: "Batch Processing with Temporal"
 
 Temporal coordinates durable execution through recorded Workflow history and Activities that perform external I/O. Batch processing divides a larger workload into bounded units so failures can be retried and progress recovered without keeping every record in Workflow history. Examples use the Java SDK and an illustrative database workload.
 
-Research checked: 2026-10-25
+Updated Oct 25, 2026
 
 A Workflow can coordinate fetching database rows and making HTTP calls without carrying every row through its history. Choose the consistency model, unit of work, concurrency bound, and recovery policy deliberately.
 

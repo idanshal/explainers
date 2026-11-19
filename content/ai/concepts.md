@@ -4,7 +4,7 @@ level: foundations
 
 # AI Concepts
 
-Research checked: 2026-10-25
+Updated Oct 25, 2026
 
 Start here for the vocabulary used in AI-enabled workflows. A model, an agent, a tool, a skill, and a connection protocol describe different parts of a system, not interchangeable names for the same thing.
 

@@ -1,10 +1,12 @@
 ---
 level: foundations
+technologies:
+    - PostgreSQL
 ---
 
 # PostgreSQL and SQL: A Hands-On Lab
 
-Research checked: 2026-11-12
+Updated Nov 12, 2026
 
 PostgreSQL is a relational database, and SQL is the language used to create tables, query rows, and change data. This exercise supplies its own database startup, schema, and sample records; no previous lab is required.
 

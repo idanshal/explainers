@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+  - Microsoft Entra ID
 ---
 
 # OAuth 2.0 Flow with Azure (Microsoft Entra ID)

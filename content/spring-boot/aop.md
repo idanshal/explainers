@@ -1,5 +1,8 @@
 ---
 level: intermediate
+technologies:
+    - Spring Boot
+    - Java
 ---
 
 # AOP and Spring AOP: Timing and Retry Annotations

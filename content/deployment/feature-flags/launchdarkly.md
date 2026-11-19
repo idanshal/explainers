@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+    - LaunchDarkly
 ---
 
 # LaunchDarkly: Practical Feature Flags and Safe Releases

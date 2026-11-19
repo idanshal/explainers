@@ -4,7 +4,7 @@ level: foundations
 
 # Common Relational Table Patterns
 
-Research checked: 2026-10-11
+Updated Oct 11, 2026
 
 These names describe common **design roles** for tables. They are not formal table types defined by SQL. A relational database enforces structure through keys and constraints, such as primary keys, foreign keys, `UNIQUE`, and `NOT NULL`.
 

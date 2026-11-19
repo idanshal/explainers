@@ -15,6 +15,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 #### Agents and Tools
 
 - [Coding Agents](content/ai/coding-agents.md): VS Code, Copilot CLI, Claude Code, Codex, execution environments, and permissions.
+- [APM: Agent Package Manager](content/ai/apm.md): Agent configuration packages, manifests, lockfiles, target integration, and security boundaries.
 - [Tools in VS Code](content/ai/tools-in-vscode.md): How agents discover and call built-in, extension, and MCP tools, with approvals and troubleshooting.
 
 #### Skills
@@ -102,6 +103,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 - [Homebrew: A Practical Guide](content/command-line-tools/homebrew.md): Install and maintain command-line tools and desktop apps with Homebrew.
 - [jq: Query and Transform JSON](content/command-line-tools/jq.md): Essential filters, safe shell arguments, grouping, aggregation, and a worked order-summary example.
 - [Pandoc: Convert Documents from the Command Line](content/command-line-tools/pandoc.md): Convert Markdown, HTML, Word documents, and PDFs with Pandoc.
+- [Vim: A Practical Guide to the Modal Editor](content/command-line-tools/vim.md): Learn Vim's modes, movement, editing operators, search, save and quit commands, and essential shortcuts.
 
 ### Web Development
 
@@ -131,6 +133,7 @@ Practical explanations of software concepts, tools, and common problems, organiz
 ### Networking
 
 - [SSH, Keys, and GitHub](content/networking/ssh-keys-and-github.md): Key pairs, SSH agents, host configuration, and GitHub authentication.
+- [NGINX](content/networking/nginx.md): Web serving, virtual hosts, location matching, reverse proxying, load balancing, and configuration troubleshooting.
 
 ### Security
 

@@ -4,7 +4,7 @@ level: intermediate
 
 # Foreign Keys and Indexes
 
-Research checked: 2026-10-11
+Updated Oct 11, 2026
 
 Foreign keys enforce relationships between rows. Indexes can help the database find rows efficiently and can also enforce uniqueness. They are related concepts, but an index is not automatically required for every foreign key or query; choose indexes based on data integrity requirements and actual query patterns.
 

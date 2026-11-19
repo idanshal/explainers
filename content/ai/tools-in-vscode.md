@@ -4,7 +4,7 @@ level: intermediate
 
 # Tools in VS Code
 
-Research checked: 2026-11-15
+Updated Nov 15, 2026
 
 A **tool** is a callable operation exposed to an AI agent: search files, read diagnostics, edit code, run a test command, or query a service. In VS Code, tools let a coding agent act on a task instead of only describing a solution. This guide focuses on GitHub Copilot's agent workflows in VS Code, not every extension or terminal utility available in the editor.
 

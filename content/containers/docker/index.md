@@ -1,3 +1,8 @@
+---
+technologies:
+    - Docker
+---
+
 # Docker: A Developer Guide
 
 Docker packages an application and its runtime dependencies into an **image**, then runs that image as one or more **containers**. As a developer, you use it to run dependencies locally, build reproducible application environments, and deliver the same application artifact to other machines.

@@ -12,6 +12,11 @@ export function articleMetadata(markdown, { overview = false } = {}) {
         if (data.level !== undefined && !levels.has(data.level)) {
                 throw new Error('Article level must be foundations, intermediate, or advanced');
         }
+        if (data.technologies !== undefined && (!Array.isArray(data.technologies)
+                || data.technologies.length > 4
+                || data.technologies.some((technology) => typeof technology !== 'string' || !technology.trim()))) {
+                throw new Error('Article technologies must be a list of up to four non-empty names');
+        }
 
         const tree = unified().use(remarkParse).parse(content);
         let proseWords = 0;
@@ -40,5 +45,6 @@ export function articleMetadata(markdown, { overview = false } = {}) {
         return {
                 level: data.level,
                 readingMinutes: Math.max(1, Math.ceil(proseWords / 200 + codeWords / 100)),
+                ...(data.technologies?.length ? { technologies: data.technologies } : {}),
         };
 }

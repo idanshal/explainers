@@ -1,10 +1,12 @@
 ---
 level: intermediate
+technologies:
+  - Google
 ---
 
 # OAuth 2.0 Flow with Google
 
-Research checked: 2026-11-10
+Updated Nov 10, 2026
 
 OAuth 2.0 delegates API access through tokens rather than giving an application the user's password. OpenID Connect (OIDC) adds an identity layer for sign-in. This example uses both in a server-side web application that signs in a Google user and reads their Google Calendar, with authorization code flow and PKCE. The roles and flow are described below; [OAuth 2.0 fundamentals](fundamentals.md) provides optional broader context.
 

@@ -1,12 +1,15 @@
 ---
 level: advanced
+technologies:
+    - Temporal
+    - Java
 ---
 
 # Java Concurrency in Temporal
 
 Temporal Workflows reconstruct orchestration state by replaying recorded events, so Workflow code must remain deterministic. Activities run external work outside that replay boundary. Java concurrency techniques must be chosen for the correct environment: ordinary Java threads and executors are not interchangeable with the Workflow SDK's deterministic scheduling primitives. Examples are SDK fragments, not a complete Worker application.
 
-Research checked: 2026-10-25
+Updated Oct 25, 2026
 
 Workflow concurrency, asynchronous Activity completion, and virtual threads solve different problems. None permits arbitrary threaded I/O inside Workflow code or makes an in-memory background job durable. Start with the [Temporal Overview](index.md) for replay and execution boundaries.
 

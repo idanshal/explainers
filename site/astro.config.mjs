@@ -22,6 +22,9 @@ export default defineConfig({
 		starlight({
 			title: 'Explainers',
 			description: 'Clear mental models for software, tools, and systems.',
+			expressiveCode: {
+				shiki: { bundledLangs: ['ssh-config'] },
+			},
 			customCss: ['./src/styles/site.css'],
 			components: { PageTitle: './src/components/PageTitle.astro' },
 			sidebar,

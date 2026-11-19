@@ -1,6 +1,9 @@
 import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 import { glob } from 'astro/loaders';
+import { i18nLoader } from '@astrojs/starlight/loaders';
 import { docsSchema } from '@astrojs/starlight/schema';
+import { i18nSchema } from '@astrojs/starlight/schema';
 import { readFile } from 'node:fs/promises';
 
 const markdownLoader = glob({ pattern: '**/*.md', base: '../content' });
@@ -44,6 +47,14 @@ const docsLoader = {
 export const collections = {
 	docs: defineCollection({
 		loader: docsLoader,
-		schema: docsSchema(),
+		schema: docsSchema({
+			extend: z.object({
+				technologies: z.array(z.string().trim().min(1)).max(4).optional(),
+			}),
+		}),
+	}),
+	i18n: defineCollection({
+		loader: i18nLoader(),
+		schema: i18nSchema(),
 	}),
 };

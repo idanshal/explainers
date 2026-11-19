@@ -1,5 +1,7 @@
 ---
 level: advanced
+technologies:
+    - Java
 ---
 
 # Jackson 3 Mr Bean Module

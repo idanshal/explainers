@@ -1,10 +1,12 @@
 ---
 level: intermediate
+technologies:
+  - jq
 ---
 
 # jq: Query and Transform JSON
 
-Research checked: 2026-11-15
+Updated Nov 15, 2026
 
 **jq** is a command-line processor for JSON. Use it to inspect API responses, extract fields, filter arrays, reshape objects, and compute summaries without writing a full program. Unlike text matching, jq understands JSON types, nesting, and escaping.
 

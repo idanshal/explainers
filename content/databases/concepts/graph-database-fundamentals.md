@@ -4,7 +4,7 @@ level: foundations
 
 # Graph Database Fundamentals
 
-Research checked: 2026-11-12
+Updated Nov 12, 2026
 
 A graph database represents entities and their connections explicitly, allowing queries to follow relationships and discover paths. This guide uses a property graph and a small social network to explain the model without requiring a running database or knowledge of Cypher.
 

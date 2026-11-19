@@ -4,7 +4,7 @@ level: intermediate
 
 # Context Optimization for Coding Agents
 
-Research checked: 2026-10-25
+Updated Oct 25, 2026
 
 Reducing token use can mean changing what an agent reads, what it writes, or both. These are different interventions with different tradeoffs. For definitions of tokens, prompts, and context windows, see [AI Concepts](concepts.md).
 

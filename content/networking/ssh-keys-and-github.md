@@ -62,7 +62,7 @@ The SSH client reads per-user settings from `~/.ssh/config`. A `Host` block appl
 
 Example configuration for two GitHub accounts:
 
-```sshconfig
+```ssh-config
 Host github.com-personal
     HostName github.com
     User git

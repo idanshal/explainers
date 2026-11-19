@@ -4,7 +4,7 @@ level: foundations
 
 # OAuth 2.0: Delegated API Authorization
 
-Research checked: 2026-11-10
+Updated Nov 10, 2026
 
 OAuth 2.0 lets an application obtain limited access to an API without asking the user to give that application their password. Its central idea is **delegation**: the application receives a token representing permitted access, rather than the user's account credentials.
 

@@ -1,5 +1,7 @@
 ---
 level: foundations
+technologies:
+  - Homebrew
 ---
 
 # Homebrew: A Practical Guide

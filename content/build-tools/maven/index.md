@@ -1,3 +1,9 @@
+---
+technologies:
+    - Apache Maven
+    - Java
+---
+
 # Maven: From Java Source to a Running Application
 
 Maven is a build automation and dependency management tool, most commonly used for Java projects. You describe your project in a file named `pom.xml`, and Maven coordinates tasks such as compiling source code, running tests, downloading libraries, and packaging the result.

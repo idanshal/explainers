@@ -1,5 +1,8 @@
 ---
 level: advanced
+technologies:
+    - Spring Boot
+    - Java
 ---
 
 # Managing Multiple Data Sources in Spring Boot

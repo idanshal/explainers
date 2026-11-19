@@ -1,10 +1,12 @@
 ---
 level: foundations
+technologies:
+  - Neo4j
 ---
 
 # Neo4j and Cypher: A Hands-On Lab
 
-Research checked: 2026-11-12
+Updated Nov 12, 2026
 
 Neo4j stores entities as nodes and their connections as relationships. Cypher queries match those graph patterns. This exercise supplies database startup, a sample graph, and queries; no previous lab is required.
 

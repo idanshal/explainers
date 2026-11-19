@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+  - GitHub Actions
 ---
 
 # GitHub Actions: Practical CI and Automation

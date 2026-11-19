@@ -1,5 +1,8 @@
 ---
 level: foundations
+technologies:
+    - Spring Boot
+    - Java
 ---
 
 # Constructor Injection in Spring Boot

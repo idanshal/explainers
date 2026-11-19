@@ -15,3 +15,14 @@ test('validates levels but allows overview pages without one', () => {
         assert.throws(() => articleMetadata('---\nlevel: expert\n---\n# Title'), /Article level/);
         assert.deepEqual(articleMetadata('# Overview', { overview: true }), { level: undefined, readingMinutes: 1 });
 });
+
+test('reads optional technology labels and validates their shape', () => {
+        const markdown = '---\nlevel: intermediate\ntechnologies:\n  - PostgreSQL\n  - Spring Boot\n---\n# Databases';
+        assert.deepEqual(articleMetadata(markdown), {
+                level: 'intermediate',
+                readingMinutes: 1,
+                technologies: ['PostgreSQL', 'Spring Boot'],
+        });
+        assert.throws(() => articleMetadata('---\nlevel: intermediate\ntechnologies: [""]\n---\n# Title'), /technologies/);
+        assert.throws(() => articleMetadata('---\nlevel: intermediate\ntechnologies: [a, b, c, d, e]\n---\n# Title'), /technologies/);
+});

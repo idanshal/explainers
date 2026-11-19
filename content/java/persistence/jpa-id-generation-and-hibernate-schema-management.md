@@ -1,5 +1,8 @@
 ---
 level: advanced
+technologies:
+    - Java
+    - Hibernate
 ---
 
 # JPA ID Generation and Hibernate Schema Management

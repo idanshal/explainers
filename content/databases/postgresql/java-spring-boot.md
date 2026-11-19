@@ -1,10 +1,14 @@
 ---
 level: intermediate
+technologies:
+    - PostgreSQL
+    - Spring Boot
+    - Java
 ---
 
 # PostgreSQL with Java and Spring Boot
 
-Research checked: 2026-11-12
+Updated Nov 12, 2026
 
 PostgreSQL stores relational data in tables. A Java application can query it directly through JDBC or map rows to objects with a persistence framework. This example connects a Spring Boot HTTP application to a small bookstore database; the minimum database setup is included below.
 The examples were checked with PostgreSQL 18.6, Spring Boot 3.5.7, and Java 25;

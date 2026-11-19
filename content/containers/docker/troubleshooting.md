@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+  - Docker
 ---
 
 # Docker Troubleshooting and Daily Operations

@@ -1,8 +1,13 @@
+---
+technologies:
+    - Temporal
+---
+
 # Temporal Overview
 
 Temporal is a durable execution platform for coordinating application work across time and failures. Its service records execution events, while application Workers run Workflow orchestration code and Activities that perform external I/O. A Workflow can recover progress by replaying recorded history rather than restarting all work from scratch.
 
-Research checked: 2026-10-25
+Updated Oct 25, 2026
 
 Temporal makes orchestration durable. It does not turn remote work into local method calls, make external side effects exactly-once, or remove the need for timeouts and data-lifecycle decisions.
 

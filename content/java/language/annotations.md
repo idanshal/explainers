@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+    - Java
 ---
 
 # Java Annotations: Practical Uses and Meta-Annotations

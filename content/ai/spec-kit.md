@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+  - GitHub
 ---
 
 # GitHub Spec Kit

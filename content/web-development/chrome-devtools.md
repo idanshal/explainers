@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+  - Chrome DevTools
 ---
 
 # Chrome DevTools: A Developer's Field Guide

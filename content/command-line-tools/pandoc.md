@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+  - Pandoc
 ---
 
 # Pandoc: Convert Documents from the Command Line

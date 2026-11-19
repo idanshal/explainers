@@ -1,5 +1,7 @@
 ---
 level: intermediate
+technologies:
+    - Cloudflare Pages
 ---
 
 # Cloudflare Pages
@@ -195,7 +197,7 @@ This restricts Function invocation to API paths, keeping the static site outside
 
 Add these entries to `.gitignore`:
 
-```gitignore
+```text
 node_modules/
 .wrangler/
 .dev.vars*

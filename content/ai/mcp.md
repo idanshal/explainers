@@ -1,10 +1,12 @@
 ---
 level: foundations
+technologies:
+    - Model Context Protocol
 ---
 
 # Model Context Protocol (MCP)
 
-Research checked: 2026-10-25
+Updated Oct 25, 2026
 
 MCP standardizes how an AI application connects to servers exposing tools, resources, and prompts. It is a connection protocol, not a model, an agent, or a guarantee that a connected tool's output is correct. For the broader vocabulary, start with [AI Concepts](concepts.md).
 

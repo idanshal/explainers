@@ -1,9 +1,54 @@
 ---
 import { Clock } from '@lucide/astro';
+import {
+        siApachemaven,
+        siCloudflare,
+        siDocker,
+        siFlyway,
+        siGoogle,
+        siGithub,
+        siGithubactions,
+        siGithubcopilot,
+        siGithubpages,
+        siGooglechrome,
+        siHibernate,
+        siHomebrew,
+        siModelcontextprotocol,
+        siNeo4j,
+        siOpenjdk,
+        siPandoc,
+        siPostgresql,
+        siSpring,
+        siTemporal,
+        siVim,
+} from 'simple-icons';
 
-const { level, readingMinutes, compact = false } = Astro.props;
+const { level, readingMinutes, technologies = [], compact = false } = Astro.props;
 const labels = { foundations: 'Foundations', intermediate: 'Intermediate', advanced: 'Advanced' };
 const steps = { foundations: 1, intermediate: 2, advanced: 3 };
+const technologyIcons = {
+        'Apache Maven': siApachemaven,
+        'Cloudflare Pages': siCloudflare,
+        Docker: siDocker,
+        Flyway: siFlyway,
+        Google: siGoogle,
+        GitHub: siGithub,
+        'GitHub Actions': siGithubactions,
+        'GitHub Copilot': siGithubcopilot,
+        'GitHub Pages': siGithubpages,
+        'Chrome DevTools': siGooglechrome,
+        Hibernate: siHibernate,
+        Homebrew: siHomebrew,
+        'Model Context Protocol': siModelcontextprotocol,
+        Neo4j: siNeo4j,
+        OpenJDK: siOpenjdk,
+        Pandoc: siPandoc,
+        PostgreSQL: siPostgresql,
+        Spring: siSpring,
+        'Spring Boot': siSpring,
+        Temporal: siTemporal,
+        Vim: siVim,
+};
 ---
 
 <div class:list={['article-meta', { compact }]}>
@@ -15,6 +60,17 @@ const steps = { foundations: 1, intermediate: 2, advanced: 3 };
         </span>}
         <span class="reading-time"><Clock size={14} strokeWidth={1.7} aria-hidden="true" /> ~{readingMinutes} min read</span>
 </div>
+{!compact && technologies.length > 0 && <ul class="technology-list" aria-label="Technologies">
+        {technologies.map((technology) => {
+                const icon = technologyIcons[technology];
+                return <li>
+                        {technology === 'Java'
+                                ? <img src={`${import.meta.env.BASE_URL}icons/java.svg`} alt="" aria-hidden="true" />
+                                : icon && <svg viewBox="0 0 24 24" style={`--technology-icon-color: #${icon.hex}`} aria-hidden="true"><path fill="currentColor" d={icon.path} /></svg>}
+                        <span>{technology}</span>
+                </li>;
+        })}
+</ul>}
 
 <style>
         .article-meta {
@@ -49,4 +105,33 @@ const steps = { foundations: 1, intermediate: 2, advanced: 3 };
         .level-step.active { background: var(--signal); }
         .level-step:nth-child(1) { height: 5px; }
         .level-step:nth-child(2) { height: 8px; }
+        .technology-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.45rem 1rem;
+                margin: 0.55rem 0 0;
+                padding: 0;
+                color: var(--sl-color-text);
+                font-family: var(--sl-font);
+                font-size: 0.84rem;
+                line-height: 1.4;
+                list-style: none;
+        }
+        .technology-list li {
+                display: inline-flex;
+                align-items: center;
+                gap: 0.35rem;
+        }
+        .technology-list svg,
+        .technology-list img {
+                width: 1.1rem;
+                height: 1.1rem;
+                flex: none;
+        }
+        .technology-list svg {
+                color: var(--technology-icon-color);
+        }
+        :global(:root[data-theme='dark']) .technology-list svg {
+                color: color-mix(in srgb, var(--technology-icon-color), white 58%);
+        }
 </style>

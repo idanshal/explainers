@@ -1,5 +1,7 @@
 ---
 level: advanced
+technologies:
+    - Java
 ---
 
 # Super Type Tokens in Java

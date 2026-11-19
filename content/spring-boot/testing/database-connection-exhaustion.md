@@ -1,5 +1,8 @@
 ---
 level: advanced
+technologies:
+  - Spring Boot
+  - PostgreSQL
 ---
 
 # Why Spring Boot Tests Run Out of Database Connections

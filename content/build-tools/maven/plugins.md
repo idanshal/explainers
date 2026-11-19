@@ -1,5 +1,8 @@
 ---
 level: intermediate
+technologies:
+  - Apache Maven
+  - Java
 ---
 
 # Maven Plugins

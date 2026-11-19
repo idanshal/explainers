@@ -1,3 +1,8 @@
+---
+technologies:
+  - Neo4j
+---
+
 # Neo4j
 
 Neo4j is a graph database that stores entities as nodes, their connections as directed relationships, and attributes as properties. Its Cypher query language matches and traverses graph patterns, such as people following other people or services depending on other services.

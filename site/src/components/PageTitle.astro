@@ -7,7 +7,7 @@ const entry = catalog.flatMap((category) => category.entries).find((item) => ite
 ---
 
 <h1 id="_top">{Astro.locals.starlightRoute.entry.data.title}</h1>
-{entry && <ArticleMetadata level={entry.level} readingMinutes={entry.readingMinutes} />}
+                {entry && <ArticleMetadata level={entry.level} readingMinutes={entry.readingMinutes} technologies={entry.technologies} />}
 
 <style>
         @layer starlight.core {

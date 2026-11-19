@@ -25,6 +25,7 @@
     "gray-matter": "^4.0.3",
     "mermaid": "^12.3.0",
     "remark-parse": "^11.0.0",
+    "simple-icons": "^16.38.0",
     "unified": "^11.0.5"
   }
 }

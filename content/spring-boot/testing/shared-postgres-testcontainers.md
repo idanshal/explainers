@@ -1,5 +1,9 @@
 ---
 level: advanced
+technologies:
+    - Spring Boot
+    - PostgreSQL
+    - Docker
 ---
 
 # Sharing PostgreSQL Testcontainers in Spring Boot Tests

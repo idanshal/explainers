@@ -1,10 +1,12 @@
 ---
 level: intermediate
+technologies:
+    - Flyway
 ---
 
 # Flyway: Database Migrations and SQL Script Tracking
 
-Research checked: 2026-11-10
+Updated Nov 10, 2026
 
 Flyway is a database migration tool. It applies ordered changes to a database and records which changes have already run, so development, test, and production databases can follow the same upgrade path.
 

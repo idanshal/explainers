@@ -1,10 +1,12 @@
 ---
 level: intermediate
+technologies:
+  - GitHub Copilot
 ---
 
 # Coding Agents
 
-Research checked: 2026-10-25
+Updated Oct 25, 2026
 
 Coding agents use models and tools to inspect repositories, change code, run commands, and work toward software-development goals. This guide compares product interfaces and execution boundaries, then distinguishes agent customization from the agent itself. For the underlying vocabulary, start with [AI Concepts](concepts.md).
 
